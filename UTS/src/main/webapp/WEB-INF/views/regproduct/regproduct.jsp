@@ -272,8 +272,12 @@
 											
 			</div>
 			<div class="ctgl-type" style="width:100%;  height: 80px;  justify-content: center; display: flex; padding-top: 30px">
-			<input type="text" class="ptype" name="ptype"
-					id="ptype"   placeholder="카테고리를 선택하세요" readonly />
+				<input type="text" class="ptype1" name="ptype1"
+						id="ptype1"   placeholder="카테고리1를 선택하세요" readonly />
+				<input type="text" class="ptype2" name="ptype2"
+				id="ptype2"   placeholder="카테고리2를 선택하세요" readonly />
+				<input type="text" class="ptype3" name="ptype3"
+				id="ptype3"   placeholder="카테고리3를 선택하세요" readonly />
 			</div>
 			</div>
 	
@@ -391,7 +395,9 @@ $("#prd-ctgl-dti-0 li").click(function(){
     	  $('.prd-ctgl-dti-2>ul').hide();
     	 $('#prd-ctgl'+(index)).show();   	  
       }
-        
+     document.getElementById('ptype2').value ="";
+	 document.getElementById('ptype3').value = "";
+     document.getElementById('ptype1').value = element;
 });
 
 
@@ -405,7 +411,8 @@ $(".prd-ctgl-dti-1 ul li").click(function(){
 		 $('.prd-ctgl-dti-2>ul').hide();
 		 $('#prd-ctgl0'+(index1)).show();
 		  }
-	
+	 document.getElementById('ptype3').value = "";
+	 document.getElementById('ptype2').value = element2;
     
 });
 
@@ -413,7 +420,7 @@ $(".prd-ctgl-dti-2 ul li").click(function(){
 	
 
 	 var element3 = $(this).text();
-		
+	 document.getElementById('ptype3').value = element3;	
     
 });
 
