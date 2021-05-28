@@ -42,8 +42,6 @@
 		 				<div class="prd-dti">
 		 					- 상품 이미지는 640x640에 최적화 되어 있습니다.<br>
 							- 이미지는 상품등록 시 정사각형으로 짤려서 등록됩니다.<br>
-							- 이미지를 클릭 할 경우 원본이미지를 확인할 수 있습니다.<br>
-							- 이미지를 클릭 후 이동하여 등록순서를 변경할 수 있습니다.<br>
 							- 큰 이미지일경우 이미지가 깨지는 경우가 발생할 수 있습니다.<br>
 							최대 지원 사이즈인 640 X 640 으로 리사이즈 해서 올려주세요.(개당 이미지 최대 10M)
 		 				</div>
@@ -67,9 +65,9 @@
 		<hr style="border: solid 1px gray">
 	
 		 		
-		<div class="form-group">
+		<div class="form-group ctgl">
 			<h4 class="col-sm-2">카테고리<span>*</span></h4>
-			<div class="col-sm-8 prd-ctgl">
+				<div class="col-sm-8 prd-ctgl">
 					<div class="col-sm-4 prd-ctgl-dti">
 						<ul id="prd-ctgl-dti-0">
 							<li><button type="button" class="btn btn-light" id="prd-ctgl-dti1">여성의류</button></li>
@@ -222,48 +220,48 @@
 					</div>
 					
 					<div class="col-sm-4 prd-ctgl-dti-2">
-						<ul id="prd-ctgl11">
-							<li><button type="button" class="btn btn-light">보이그룹</button></li>
+						<ul id="prd-ctgl00">
+							<li><button type="button" class="btn btn-light">1</button></li>
 							<li><button type="button" class="btn btn-light">걸그룹</button></li>
 							<li><button type="button" class="btn btn-light">솔로(남)</button></li>
 							<li><button type="button" class="btn btn-light">코트</button></li>
 							<li><button type="button" class="btn btn-light">긴팔 티셔츠</button></li>
 							<li><button type="button" class="btn btn-light">반바지/7~9부</button></li>
 						</ul>
-						<ul id="prd-ctgl12">
-							<li><button type="button" class="btn btn-light">조끼/베스트</button></li>
+						<ul id="prd-ctgl01">
+							<li><button type="button" class="btn btn-light">2</button></li>
 							<li><button type="button" class="btn btn-light">가디건</button></li>
 							<li><button type="button" class="btn btn-light">비즈니스 정장</button></li>
 							<li><button type="button" class="btn btn-light">테마/이벤트 의류</button></li>
 							<li><button type="button" class="btn btn-light">언더웨어/속옷</button></li>
 							<li><button type="button" class="btn btn-light">빅사이즈</button></li>
 						</ul>
-						<ul id="prd-ctgl13">
-							<li><button type="button" class="btn btn-light">보이그룹</button></li>
+						<ul id="prd-ctgl02">
+							<li><button type="button" class="btn btn-light">3</button></li>
 							<li><button type="button" class="btn btn-light">걸그룹</button></li>
 							<li><button type="button" class="btn btn-light">솔로(남)</button></li>
 							<li><button type="button" class="btn btn-light">코트</button></li>
 							<li><button type="button" class="btn btn-light">긴팔 티셔츠</button></li>
 							<li><button type="button" class="btn btn-light">반바지/7~9부</button></li>
 						</ul>
-						<ul id="prd-ctgl14">	
-							<li><button type="button" class="btn btn-light">조끼/베스트</button></li>
+						<ul id="prd-ctgl03">	
+							<li><button type="button" class="btn btn-light">4</button></li>
 							<li><button type="button" class="btn btn-light">가디건</button></li>
 							<li><button type="button" class="btn btn-light">비즈니스 정장</button></li>
 							<li><button type="button" class="btn btn-light">테마/이벤트 의류</button></li>
 							<li><button type="button" class="btn btn-light">언더웨어/속옷</button></li>
 							<li><button type="button" class="btn btn-light">빅사이즈</button></li>
 						</ul>
-						<ul id="prd-ctgl15">	
-							<li><button type="button" class="btn btn-light">보이그룹</button></li>
+						<ul id="prd-ctgl04">	
+							<li><button type="button" class="btn btn-light">5</button></li>
 							<li><button type="button" class="btn btn-light">걸그룹</button></li>
 							<li><button type="button" class="btn btn-light">솔로(남)</button></li>
 							<li><button type="button" class="btn btn-light">코트</button></li>
 							<li><button type="button" class="btn btn-light">긴팔 티셔츠</button></li>
 							<li><button type="button" class="btn btn-light">반바지/7~9부</button></li>
 						</ul>
-						<ul id="prd-ctgl16">	
-							<li><button type="button" class="btn btn-light">조끼/베스트</button></li>
+						<ul id="prd-ctgl05">	
+							<li><button type="button" class="btn btn-light">6</button></li>
 							<li><button type="button" class="btn btn-light">가디건</button></li>
 							<li><button type="button" class="btn btn-light">비즈니스 정장</button></li>
 							<li><button type="button" class="btn btn-light">테마/이벤트 의류</button></li>
@@ -273,9 +271,12 @@
 					</div>
 											
 			</div>
-		
-		</div>
-		
+			<div class="ctgl-type" style="width:100%;  height: 80px;  justify-content: center; display: flex; padding-top: 30px">
+			<input type="text" class="ptype" name="ptype"
+					id="ptype"   placeholder="카테고리를 선택하세요" readonly />
+			</div>
+			</div>
+	
 		<hr style="border: solid 1px gray">
 		
 		<div class="form-group">
@@ -377,33 +378,44 @@ function getEventTarget(e) {
     return e.target || e.srcElement; 
 }
 
-$(".prd-ctgl  ul  li").click(function(){
+
+
+$("#prd-ctgl-dti-0 li").click(function(){
 	
-	
-   var index = $(".prd-ctgl  ul  li").index(this);
-   
+   	
+   var index = $("#prd-ctgl-dti-0 li").index(this);
+   var element = $(this).text();
      
      if($('#prd-ctgl'+(index)).css("display") == "none"){
-   	     	 
-    	 $('#prd-ctgl'+(index)).show();
-   	  
+    	  $('.prd-ctgl-dti-1>ul').hide();
+    	  $('.prd-ctgl-dti-2>ul').hide();
+    	 $('#prd-ctgl'+(index)).show();   	  
       }
+        
 });
 
-/*var ul = document.getElementById('prd-ctgl-dti-0');
-ul.onclick = function(event) {
-    var target = getEventTarget(event);
-    
-    
-    
-    if($('#'+(target.innerHTML)).css("display") == "none"){
- 	   $('#'+(target.innerHTML)).show();
- 	
-    }
-};*/
 
+$(".prd-ctgl-dti-1 ul li").click(function(){
+	
+	
+	var index1 = $(".prd-ctgl-dti-1 ul li").index(this);
+	 var element2 = $(this).text();
+	
+	if($('#prd-ctgl0'+(index1)).css("display") == "none"){
+		 $('.prd-ctgl-dti-2>ul').hide();
+		 $('#prd-ctgl0'+(index1)).show();
+		  }
+	
+    
+});
 
+$(".prd-ctgl-dti-2 ul li").click(function(){
+	
 
+	 var element3 = $(this).text();
+		
+    
+});
 
 
 function daumZipCode() {
@@ -456,6 +468,8 @@ function daumZipCode() {
 function setThumbnail(event) {
 	var reader = new FileReader(); 
 	reader.onload = function(event) { 
+		
+		
 	
 		var img = document.createElement("img");
 		img.setAttribute("src", event.target.result);
@@ -468,6 +482,8 @@ function setThumbnail(event) {
 		// 계산된 파일의 용량을 가지고 제한된 범위내이면 화면에 보여준다.
 		if(rtnValue == true) {
 			// 선택한 이미지를 화면에 보여주는 부분
+			
+			
 			
 			document.querySelector("li#image_container").appendChild(img);
 		}
@@ -493,36 +509,11 @@ function uploadFileSizeCheck() {
 }
 
 
-function uploadimgSizeCheck() { 
-	
-	var maxWidth = 600; 				// Max width for the image 
-	var maxHeight = 600;				// Max height for the image 
-	var ratio = 0;						// Used for aspect ratio 
-	var width = $(this).width();		// Current image width 
-	var height = $(this).height();		// Current image height 
-// Check if the current width is larger than the max 
-if(width > maxWidth){
-	ratio = maxWidth / width; // get ratio for scaling image 
-	$(this).css("width", maxWidth); // Set new width 
-	$(this).css("height", height * ratio); 	// Scale height based on ratio 
-	height = height * ratio; 	// Reset height to match scaled image 
-	} 
-	var width = $(this).width();// Current image width 
-	var height = $(this).height(); 	// Current image height 
-	// Check if current height is larger than max 
-	
-	if(height > maxHeight){ 
-		ratio = maxHeight / height; // get ratio for scaling image
-		$(this).css("height", maxHeight); // Set new height 
-		$(this).css("width", width * ratio); // Scale width based on ratio 
-		width = width * ratio; // Reset width to match scaled image 
-		}
-}
 
 
-
-
-	
+$("#image_container > img").each(function( index, element ) {
+    console.log(index);
+  });
 
 /*
 $("input[type=file]").bind( 'change', function (e) {

@@ -564,6 +564,16 @@ button {
 
 }
 
+.ptype {
+
+	 text-align: center;
+    border: 1px solid rgb(195, 194, 204);
+    margin-right: 1rem;
+    border-radius: 2px;
+	 
+	
+}
+
 .prd-location{
 
 flex: 110%;
@@ -578,10 +588,15 @@ flex: 110%;
     vertical-align: baseline;
 }
 
+
+.prd-ctgl-dti-1, .prd-ctgl-dti-2 {
+		
+	  overflow-y: auto;
+}
 .prd-ctgl-dti-1 ul, .prd-ctgl-dti-2 ul{
 	
 	display: none;
-	
+	  overflow-y: auto;
 }
 
 
@@ -603,6 +618,14 @@ flex: 110%;
     flex-wrap: wrap;
     overflow-x: hidden;
 }
+
+#image_container > img{
+	
+    width: 202px;
+    height: 202px;
+    
+}
+
 
 
 
