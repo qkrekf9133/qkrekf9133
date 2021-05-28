@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.joonggo.pro.mappers.regproductmapper">
+
+<insert id="productInsert" parameterType="com.joonggo.pro.regproduct.dto.RegproductDTO" useGeneratedKeys="true" keyProperty="bno">
+	INSERT	INTO	product
+			(psubject, 		pprice, 	plocation, 		pcontent, 		pwriter,	 pcondition,	 pquantity, pregdate,  pexchange, ptype)
+	VALUES	(#{psubject},	#{pprice},	#{plocation},	#{pcontent}, 	#{pwriter},	 #{pcondition}, #{pquantity},	now(),	#{pexchange}, #{ptype} )
+</insert>
+
+</mapper>
