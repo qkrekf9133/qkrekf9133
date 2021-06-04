@@ -16,7 +16,7 @@
 		<%@ include file="../include/topmenu.jsp" %>
 
 		
-	<form class="form-horizontal" name = "regproductForm" action="/regproduct/regproductinsert"  method="post">
+	<form class="form-horizontal" name = "regproductForm" action="/regproduct/regproductinsert"  method="post" >
 			<div>
 				<h2 style="padding-left: 30px;">기본정보
 					<span style="font-size: 2rem;  color: rgb(255, 80, 88);">*필수사항</span>
@@ -33,11 +33,12 @@
 			 		<ul class="prd-photo1">
 			 			<li class="prd-photo" >
 			 				"이미지 등록"
-			 				
-			 				<input id="uploadFile" type="file" id="image"accept="image/jpg, image/jpeg, image/png"  onchange="setThumbnail(event);" multiple>
+			 				<input id="uploadFile" type="file" name="name" accept="image/jpg, image/jpeg, image/png"  onchange="setThumbnail(event);" multiple>
 			 				
 			 			</li>
 		 				<li id="image_container"></li>
+		 				
+		 				
 			 		</ul>
 		 				<div class="prd-dti">
 		 					- 상품 이미지는 640x640에 최적화 되어 있습니다.<br>
@@ -272,12 +273,15 @@
 											
 			</div>
 			<div class="ctgl-type" style="width:100%;  height: 80px;  justify-content: center; display: flex; padding-top: 30px">
-				<input type="text" class="ptype1" name="ptype1"
+				<input type="text" class="ptype1" 
 						id="ptype1"   placeholder="카테고리1를 선택하세요" readonly />
-				<input type="text" class="ptype2" name="ptype2"
+				<input type="text" class="ptype2" 
 				id="ptype2"   placeholder="카테고리2를 선택하세요" readonly />
-				<input type="text" class="ptype3" name="ptype3"
+				<input type="text" class="ptype3" 
 				id="ptype3"   placeholder="카테고리3를 선택하세요" readonly />
+				
+				<input type="hidden" class="ptype3" id ="ptype" name="ptype"
+				id="ptype3"   readonly />
 			</div>
 			</div>
 	
@@ -374,9 +378,9 @@
 
 <script>
 
-
-
-
+var element;
+var element2;
+var element3;
 function getEventTarget(e) {
     e = e || window.event;
     return e.target || e.srcElement; 
@@ -388,13 +392,14 @@ $("#prd-ctgl-dti-0 li").click(function(){
 	
    	
    var index = $("#prd-ctgl-dti-0 li").index(this);
-   var element = $(this).text();
+    element = $(this).text();
      
      if($('#prd-ctgl'+(index)).css("display") == "none"){
     	  $('.prd-ctgl-dti-1>ul').hide();
     	  $('.prd-ctgl-dti-2>ul').hide();
     	 $('#prd-ctgl'+(index)).show();   	  
       }
+	 document.getElementById('ptype').value = "";
      document.getElementById('ptype2').value ="";
 	 document.getElementById('ptype3').value = "";
      document.getElementById('ptype1').value = element;
@@ -405,12 +410,13 @@ $(".prd-ctgl-dti-1 ul li").click(function(){
 	
 	
 	var index1 = $(".prd-ctgl-dti-1 ul li").index(this);
-	 var element2 = $(this).text();
+	element2 = $(this).text();
 	
 	if($('#prd-ctgl0'+(index1)).css("display") == "none"){
 		 $('.prd-ctgl-dti-2>ul').hide();
 		 $('#prd-ctgl0'+(index1)).show();
 		  }
+	 document.getElementById('ptype').value = "";
 	 document.getElementById('ptype3').value = "";
 	 document.getElementById('ptype2').value = element2;
     
@@ -419,9 +425,11 @@ $(".prd-ctgl-dti-1 ul li").click(function(){
 $(".prd-ctgl-dti-2 ul li").click(function(){
 	
 
-	 var element3 = $(this).text();
+	element3 = $(this).text();
+	
 	 document.getElementById('ptype3').value = element3;	
-    
+	 
+	 document.getElementById('ptype').value = element+">"+element2+">"+element3;
 });
 
 
@@ -475,24 +483,22 @@ function daumZipCode() {
 function setThumbnail(event) {
 	var reader = new FileReader(); 
 	reader.onload = function(event) { 
-		
-		
+				
 	
 		var img = document.createElement("img");
 		img.setAttribute("src", event.target.result);
-		
+	
 		//document.getElementById("uploadFile").files[0].size;
 
-		// 선택한 파일의 용량계산을 uploadFileSizeCheck()에서 가져온다.
+		// 선택한 파일의 용량계산을 uplsoadFileSizeCheck()에서 가져온다.
 		var rtnValue = uploadFileSizeCheck();
 		
 		// 계산된 파일의 용량을 가지고 제한된 범위내이면 화면에 보여준다.
 		if(rtnValue == true) {
 			// 선택한 이미지를 화면에 보여주는 부분
+					
 			
-			
-			
-			document.querySelector("li#image_container").appendChild(img);
+		document.querySelector("li#image_container").appendChild(img);
 		}
 	}; 
 		reader.readAsDataURL(event.target.files[0]); 
@@ -518,8 +524,9 @@ function uploadFileSizeCheck() {
 
 
 
-$("#image_container > img").each(function( index, element ) {
-    console.log(index);
+$("li#image_container img").each(function(index, src) {
+   
+	console.log(src);
   });
 
 /*

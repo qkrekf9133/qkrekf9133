@@ -5,10 +5,23 @@
   
 <mapper namespace="com.joonggo.pro.mappers.regproductmapper">
 
+<!-- 게시글 넣기 -->
 <insert id="productInsert" parameterType="com.joonggo.pro.regproduct.dto.RegproductDTO" useGeneratedKeys="true" keyProperty="bno">
 	INSERT	INTO	product
 			(psubject, 		pprice, 	plocation, 		pcontent, 		pwriter,	 pcondition,	 pquantity, pregdate,  pexchange, ptype)
 	VALUES	(#{psubject},	#{pprice},	#{plocation},	#{pcontent}, 	#{pwriter},	 #{pcondition}, #{pquantity},	now(),	#{pexchange}, #{ptype} )
 </insert>
+
+
+
+<!-- 게시글 목록 보기 -->
+	<select id="findAll" resultType="com.joonggo.pro.regproduct.dto.RegproductDTO">
+	SELECT * FROM product;
+	</select>
+	
+	<!-- 게시글 세부 보기 -->
+	<select id="productDtl" resultType="com.joonggo.pro.regproduct.dto.RegproductDTO">
+	SELECT * FROM product WHERE pno = #{bno};
+	</select>
 
 </mapper>

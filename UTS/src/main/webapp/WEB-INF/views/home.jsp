@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c"   		uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" 		uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page session="false" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <head>
@@ -59,97 +61,29 @@
 	</div>
 </div>
 
-	<div class="main-item-box">
-		<div class="main-prd-list">
 		
+			<div class="main-item-box" style="padding-top:20px">
+			<div class="main-prd-list">
+				<c:forEach var="productList" items="${productList}">
+					<div class="main-prd-box">
+					<a class="link-prod" href="/regproduct/regproductdtl/${productList.pno}"></a>
+						<img src="#" class="main-prd-item-img" /> <!-- 상품이미지 -->
+						<ul class="main-prd-item">
+							<li class="prd-item-company">${productList.psubject}</li> <!-- 제목 -->
+							<li class="prd-item-name">${productList.ptype}</li> <!-- 상품종류 -->
+							<li class="prd-item-price"><fmt:formatNumber value="${productList.pprice}" type="number" />원</li> <!-- 가격 -->
+							<li class="prd-item-soldCount">${productList.pquantity}개</li> <!-- 판매량 default = 0 -->
+						</ul>
+					</div>
+				</c:forEach>
+			</div>
+		</div>	
+			
 		
-			<div class="main-prd-box" >
-				<a class="link-prod" href="#"></a>
-					<img src="/../../resources/images/used1.jpg" class="main-prd-item-img" /> <!-- 상품이미지 -->
-					<ul class="main-prd-item">
-						<li class="prd-item-company">subject</li> <!-- 제조사 -->
-						<li class="prd-item-price">가격</li> <!-- 가격 -->
-						<li class="prd-item-soldCount">판매량</li> <!-- 판매량 default = 0 -->
-					</ul>
-			</div>
-				
-			<div class="main-prd-box" >
-				<a class="link-prod" href="#"></a>
-					<img src="/../../resources/images/used1.jpg" class="main-prd-item-img" /> <!-- 상품이미지 -->
-					<ul class="main-prd-item">
-						<li class="prd-item-company">subject</li> <!-- 제조사 -->
-						<li class="prd-item-price">가격</li> <!-- 가격 -->
-						<li class="prd-item-soldCount">판매량</li> <!-- 판매량 default = 0 -->
-					</ul>
-			</div>
 			
 				
-			<div class="main-prd-box" >
-				<a class="link-prod" href="#"></a>
-					<img src="/../../resources/images/used1.jpg" class="main-prd-item-img" /> <!-- 상품이미지 -->
-					<ul class="main-prd-item">
-						<li class="prd-item-company">subject</li> <!-- 제조사 -->
-						<li class="prd-item-price">가격</li> <!-- 가격 -->
-						<li class="prd-item-soldCount">판매량</li> <!-- 판매량 default = 0 -->
-					</ul>
-			</div>
-			
-				
-			<div class="main-prd-box" >
-				<a class="link-prod" href="#"></a>
-					<img src="/../../resources/images/used1.jpg" class="main-prd-item-img" /> <!-- 상품이미지 -->
-					<ul class="main-prd-item">
-						<li class="prd-item-company">subject</li> <!-- 제조사 -->
-						<li class="prd-item-price">가격</li> <!-- 가격 -->
-						<li class="prd-item-soldCount">판매량</li> <!-- 판매량 default = 0 -->
-					</ul>
-			</div>
-			
-				
-			<div class="main-prd-box" >
-				<a class="link-prod" href="#"></a>
-					<img src="/../../resources/images/used1.jpg" class="main-prd-item-img" /> <!-- 상품이미지 -->
-					<ul class="main-prd-item">
-						<li class="prd-item-company">subject</li> <!-- 제조사 -->
-						<li class="prd-item-price">가격</li> <!-- 가격 -->
-						<li class="prd-item-soldCount">판매량</li> <!-- 판매량 default = 0 -->
-					</ul>
-			</div>
-			
-				
-			<div class="main-prd-box" >
-				<a class="link-prod" href="#"></a>
-					<img src="/../../resources/images/used1.jpg" class="main-prd-item-img" /> <!-- 상품이미지 -->
-					<ul class="main-prd-item">
-						<li class="prd-item-company">subject</li> <!-- 제조사 -->
-						<li class="prd-item-price">가격</li> <!-- 가격 -->
-						<li class="prd-item-soldCount">판매량</li> <!-- 판매량 default = 0 -->
-					</ul>
-			</div>
-			
-				
-			<div class="main-prd-box" >
-				<a class="link-prod" href="#"></a>
-					<img src="/../../resources/images/used1.jpg" class="main-prd-item-img" /> <!-- 상품이미지 -->
-					<ul class="main-prd-item">
-						<li class="prd-item-company">subject</li> <!-- 제조사 -->
-						<li class="prd-item-price">가격</li> <!-- 가격 -->
-						<li class="prd-item-soldCount">판매량</li> <!-- 판매량 default = 0 -->
-					</ul>
-			</div>
-			
-			
-
-	`	
-			
-				
-		</div> <!-- <div class="main-prd-list"> end -->
-			
-	</div> <!-- 	<div class="main-item-box"> end  -->
-	
-
-	
-	</div> <!-- <div class="container"> end  -->
+					
+	</div>
 		
 	
 	<%@ include file="include/footer.jsp" %>

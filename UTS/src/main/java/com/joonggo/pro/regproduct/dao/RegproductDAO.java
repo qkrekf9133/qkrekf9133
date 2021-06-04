@@ -1,5 +1,7 @@
 package com.joonggo.pro.regproduct.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -29,6 +31,18 @@ public class RegproductDAO {
 	public void productInsert(RegproductDTO regproduct) throws Exception {
 		logger.info("RegProductDAO Insert() => " + regproduct);
 	sqlSession.insert(namespace+ ".productInsert", regproduct );
+		
+	}
+	
+	public List<RegproductDTO> findAll() throws Exception {
+		logger.info("RegProductDAO Insert() => " );
+	return sqlSession.selectList(namespace+ ".findAll");
+		
+	}
+	
+	public RegproductDTO productDtl(int pno) throws Exception {
+		logger.info("productDtl Insert() => " );
+	return sqlSession.selectOne(namespace+ ".productDtl", pno);
 		
 	}
 	

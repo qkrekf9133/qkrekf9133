@@ -1,5 +1,7 @@
 package com.joonggo.pro.regproduct.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -31,12 +33,19 @@ public class RegproductService {
 			
 	}
 	
-	/*
-	 * public int photoInsert(PhotoDTO RegProduct) {
-	 * 
-	 * return regproductDAO.photoInsert(RegProduct);
-	 * 
-	 * }
-	 */
+	
+	public List<RegproductDTO> findAll() throws Exception {
+		logger.info("RegproductService productinsert() =>" );
+		return regproductDAO.findAll();
+			
+	}
+	
+	public RegproductDTO productDtl(int pno) throws Exception {
+		logger.info("RegproductService productinsert() =>" );
+		return regproductDAO.productDtl(pno);
+			
+	}
+	
+	
 
 }
