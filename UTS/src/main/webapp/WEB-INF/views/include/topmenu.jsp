@@ -59,8 +59,8 @@
 		            </div>
 		      	 </form>
 			<div class="top-btn navbar-right ">
-				 <a class="btn btn-success  btn-sm" href="#">로그인</a>
-				 <a class="btn btn-primary  btn-sm" href="#">회원가입</a>
+				 <a class="btn btn-success  btn-sm" href="/Logon/Login">로그인</a>
+				 <a class="btn btn-primary  btn-sm" href="/Join/Joinarticle">회원가입</a>
 			</div>
 			</div>
 			
