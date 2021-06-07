@@ -82,6 +82,7 @@
 							<li><button type="button" class="btn btn-light" id="prd-ctgl-dti9">뷰티/미용</button></li>
 							<li><button type="button" class="btn btn-light" id="prd-ctgl-dti10">유아동/출산</button></li>
 							<li><button type="button" class="btn btn-light" id="prd-ctgl-dti11">차량/오토바이</button></li>
+							<li><button type="button" class="btn btn-light" id="prd-ctgl-dti11">기타</button></li>
 						</ul>						
 					</div>
 					
@@ -91,8 +92,8 @@
 							<li><button type="button" class="btn btn-light">원피스</button></li>
 							<li><button type="button" class="btn btn-light">스커트/치마</button></li>
 							<li><button type="button" class="btn btn-light">자켓</button></li>
-							<li><button type="button" class="btn btn-light">니트/스웨터</button></li>
 							<li><button type="button" class="btn btn-light">블라우스</button></li>
+							<li><button type="button" class="btn btn-light">니트/스웨터</button></li>
 							<li><button type="button" class="btn btn-light">야상/점퍼/패딩</button></li>
 							<li><button type="button" class="btn btn-light">코트</button></li>
 							<li><button type="button" class="btn btn-light">반팔 티셔츠</button></li>
@@ -100,7 +101,16 @@
 							<li><button type="button" class="btn btn-light">가디건</button></li>
 							<li><button type="button" class="btn btn-light">청바지/스키니(긴)</button></li>
 							<li><button type="button" class="btn btn-light">면/캐주얼 바지(긴)</button></li>
-							<li><button type="button" class="btn btn-light">스커트/치마</button></li>
+							<li><button type="button" class="btn btn-light">셔츠/남방</button></li>
+							<li><button type="button" class="btn btn-light">트레이닝</button></li>
+							<li><button type="button" class="btn btn-light">긴팔 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">반바지/핫팬츠</button></li>
+							<li><button type="button" class="btn btn-light">조끼/베스트</button></li>
+							<li><button type="button" class="btn btn-light">테마/이벤트 의류</button></li>
+							<li><button type="button" class="btn btn-light">언더웨어/속옷</button></li>
+							<li><button type="button" class="btn btn-light">레깅스</button></li>
+							<li><button type="button" class="btn btn-light">비즈니스 정장</button></li>
+							<li><button type="button" class="btn btn-light">빅사이즈</button></li>
 						 </ul>		
 						<ul id="prd-ctgl1">	
 							<li><button type="button" class="btn btn-light">여성가방</button></li>
@@ -111,8 +121,8 @@
 							<li><button type="button" class="btn btn-light">모자</button></li>
 							<li><button type="button" class="btn btn-light">벨트/장갑/스타킹/기타</button></li>
 							<li><button type="button" class="btn btn-light">남성화</button></li>
-							<li><button type="button" class="btn btn-light">시계</button></li>
 							<li><button type="button" class="btn btn-light">남성가방</button></li>
+							<li><button type="button" class="btn btn-light">시계</button></li>
 							<li><button type="button" class="btn btn-light">인경/선글라스</button></li>
 							<li><button type="button" class="btn btn-light">여행용가방/소품</button></li>
 						</ul>
@@ -124,8 +134,8 @@
 							<li><button type="button" class="btn btn-light">셔츠/남방</button></li>
 							<li><button type="button" class="btn btn-light">트레이닝</button></li>
 							<li><button type="button" class="btn btn-light">청바지(긴)</button></li>
-							<li><button type="button" class="btn btn-light">니트/스웨처</button></li>
-							<li><button type="button" class="btn btn-light">야상/점퍼/패딩</button></li>
+							<li><button type="button" class="btn btn-light">니트/스웨터</button></li>
+							<li><button type="button" class="btn btn-light">면/캐주얼 바지(긴)</button></li>
 							<li><button type="button" class="btn btn-light">코트</button></li>
 							<li><button type="button" class="btn btn-light">긴팔 티셔츠</button></li>
 							<li><button type="button" class="btn btn-light">반바지/7~9부</button></li>
@@ -149,9 +159,8 @@
 							<li><button type="button" class="btn btn-light">취미/키덜트</button></li>
 							<li><button type="button" class="btn btn-light">도서/책</button></li>
 							<li><button type="button" class="btn btn-light">희귀/수집품</button></li>
-							<li><button type="button" class="btn btn-light">점퍼/야상/패딩</button></li>
-							<li><button type="button" class="btn btn-light">반려동물용품</button></li>
 							<li><button type="button" class="btn btn-light">기프티콘/쿠폰</button></li>
+							<li><button type="button" class="btn btn-light">반려동물용품</button></li>
 							<li><button type="button" class="btn btn-light">예술/악기/수공예품</button></li>
 							<li><button type="button" class="btn btn-light">상품권</button></li>
 							<li><button type="button" class="btn btn-light">티켓/항공권</button></li>
@@ -160,47 +169,68 @@
 							<li><button type="button" class="btn btn-light">보이그룹</button></li>
 							<li><button type="button" class="btn btn-light">걸그룹</button></li>
 							<li><button type="button" class="btn btn-light">솔로(남)</button></li>
-							<li><button type="button" class="btn btn-light">코트</button></li>
-							<li><button type="button" class="btn btn-light">긴팔 티셔츠</button></li>
-							<li><button type="button" class="btn btn-light">반바지/7~9부</button></li>
+							<li><button type="button" class="btn btn-light">솔로(여)</button></li>
+							<li><button type="button" class="btn btn-light">배우(남)</button></li>
+							<li><button type="button" class="btn btn-light">기타(방송인)</button></li>
+							<li><button type="button" class="btn btn-light">배우(여)</button></li>
 						</ul>
 						<ul id="prd-ctgl6">
-							<li><button type="button" class="btn btn-light">조끼/베스트</button></li>
-							<li><button type="button" class="btn btn-light">가디건</button></li>
-							<li><button type="button" class="btn btn-light">비즈니스 정장</button></li>
-							<li><button type="button" class="btn btn-light">테마/이벤트 의류</button></li>
-							<li><button type="button" class="btn btn-light">언더웨어/속옷</button></li>
-							<li><button type="button" class="btn btn-light">빅사이즈</button></li>
+							<li><button type="button" class="btn btn-light">생활용품</button></li>
+							<li><button type="button" class="btn btn-light">주방용품</button></li>
+							<li><button type="button" class="btn btn-light">가구</button></li>
+							<li><button type="button" class="btn btn-light">식품</button></li>
 						</ul>
 						
 						<ul id="prd-ctgl7">
-							<li><button type="button" class="btn btn-light">베스트</button></li>
-							<li><button type="button" class="btn btn-light">가건</button></li>
-							<li><button type="button" class="btn btn-light">비니스 정장</button></li>
-							<li><button type="button" class="btn btn-light">테/이벤트 의류</button></li>
-							<li><button type="button" class="btn btn-light">언웨어/속옷</button></li>
-							<li><button type="button" class="btn btn-light">빅사이즈</button></li>
-						</ul>
-						
-						<ul id="prd-ctgl8">
-							<li><button type="button" class="btn btn-light">조끼/베스트</button></li>
-							<li><button type="button" class="btn btn-light">가디건</button></li>
-							<li><button type="button" class="btn btn-light">비즈니스 정장</button></li>
-							<li><button type="button" class="btn btn-light">테마/이벤트 의류</button></li>
-							<li><button type="button" class="btn btn-light">언더웨어/속옷</button></li>
-							<li><button type="button" class="btn btn-light">빅사이즈</button></li>
-						</ul>
+							<li><button type="button" class="btn btn-light">골프</button></li>
+							<li><button type="button" class="btn btn-light">축구</button></li>
+							<li><button type="button" class="btn btn-light">등산/클라이밍</button></li>
+							<li><button type="button" class="btn btn-light">자전거</button></li>
+							<li><button type="button" class="btn btn-light">헬스/요가/필라테스</button></li>
+							<li><button type="button" class="btn btn-light">캠핑</button></li>
+							<li><button type="button" class="btn btn-light">수상 스포츠</button></li>
+							<li><button type="button" class="btn btn-light">야구</button></li>
+							<li><button type="button" class="btn btn-light">낚시</button></li>
+							<li><button type="button" class="btn btn-light">기타 구기 스포츠</button></li>
+							<li><button type="button" class="btn btn-light">겨울 스포츠</button></li>
+							<li><button type="button" class="btn btn-light">농구</button></li>
+							<li><button type="button" class="btn btn-light">볼링</button></li>
+							<li><button type="button" class="btn btn-light">전동킥보드/전도휠</button></li>
+							<li><button type="button" class="btn btn-light">인라인/스케이트보드</button></li>
+							<li><button type="button" class="btn btn-light">배드민턴</button></li>
+							<li><button type="button" class="btn btn-light">탁구</button></li>
+							<li><button type="button" class="btn btn-light">테니스</button></li>
+							<li><button type="button" class="btn btn-light">당구</button></li>
 							
-						<ul id="prd-ctgl8">
-							<li><button type="button" class="btn btn-light">조끼/베스트</button></li>
-							<li><button type="button" class="btn btn-light">가디건</button></li>
-							<li><button type="button" class="btn btn-light">비즈니스 정장</button></li>
-							<li><button type="button" class="btn btn-light">테마/이벤트 의류</button></li>
-							<li><button type="button" class="btn btn-light">언더웨어/속옷</button></li>
-							<li><button type="button" class="btn btn-light">빅사이즈</button></li>
-						</ul>		
+					
+						</ul>
 						
 						<ul id="prd-ctgl9">
+							<li><button type="button" class="btn btn-light">여아의류(3-6세)</button></li>
+							<li><button type="button" class="btn btn-light">유아동신발/잡화</button></li>
+							<li><button type="button" class="btn btn-light">교육/완구/인형</button></li>
+							<li><button type="button" class="btn btn-light">남아의류(3-6세)</button></li>
+							<li><button type="button" class="btn btn-light">베이비의류(0-2세)</button></li>
+							<li><button type="button" class="btn btn-light">유아동용품</button></li>
+							<li><button type="button" class="btn btn-light">여주니어의류(7세~)</button></li>
+							<li><button type="button" class="btn btn-light">남주니어의류(7세~)</button></li>
+							<li><button type="button" class="btn btn-light">기저귀/수유/이유식</button></li>
+							<li><button type="button" class="btn btn-light">출산 임부용품</button></li>
+						</ul>
+							
+						<ul id="prd-ctgl10">
+						 	<li><button type="button" class="btn btn-light">타이어/휠</button></li>
+						 	<li><button type="button" class="btn btn-light">차량 부품</button></li>
+						 	<li><button type="button" class="btn btn-light">오토바이/스쿠터</button></li>
+						 	<li><button type="button" class="btn btn-light">차량/튜닝용품</button></li>
+						 	<li><button type="button" class="btn btn-light">국산차</button></li>
+						 	<li><button type="button" class="btn btn-light">산업용품</button></li>
+						 	<li><button type="button" class="btn btn-light">네비게이션/블랙박스</button></li>
+						 	<li><button type="button" class="btn btn-light">수입차</button></li>
+						 	<li><button type="button" class="btn btn-light">카오디오/영상</button></li>
+						</ul>		
+						
+						<ul id="prd-ctgl11">
 							<li><button type="button" class="btn btn-light">조끼/베스트</button></li>
 							<li><button type="button" class="btn btn-light">가디건</button></li>
 							<li><button type="button" class="btn btn-light">비즈니스 정장</button></li>
@@ -222,66 +252,164 @@
 					
 					<div class="col-sm-4 prd-ctgl-dti-2">
 						<ul id="prd-ctgl00">
-							<li><button type="button" class="btn btn-light">1</button></li>
-							<li><button type="button" class="btn btn-light">걸그룹</button></li>
-							<li><button type="button" class="btn btn-light">솔로(남)</button></li>
-							<li><button type="button" class="btn btn-light">코트</button></li>
-							<li><button type="button" class="btn btn-light">긴팔 티셔츠</button></li>
-							<li><button type="button" class="btn btn-light">반바지/7~9부</button></li>
+							<li><button type="button" class="btn btn-light">롱원피스</button></li>
+							<li><button type="button" class="btn btn-light">캐주얼 원피스</button></li>
+							<li><button type="button" class="btn btn-light">미니 원피스</button></li>
+							<li><button type="button" class="btn btn-light">럭셔리 원피스</button></li>
+							<li><button type="button" class="btn btn-light">쉬폰/레이스 원피스</button></li>
+							<li><button type="button" class="btn btn-light">기타(원피스)</button></li>
+							<li><button type="button" class="btn btn-light">나시/탑 원피스</button></li>
+							<li><button type="button" class="btn btn-light">투피스</button></li>
+							<li><button type="button" class="btn btn-light">후드/니트 원피스</button></li>
+							<li><button type="button" class="btn btn-light">프린트 원피스</button></li>
+							<li><button type="button" class="btn btn-light">청 원피스</button></li>
 						</ul>
 						<ul id="prd-ctgl01">
-							<li><button type="button" class="btn btn-light">2</button></li>
-							<li><button type="button" class="btn btn-light">가디건</button></li>
-							<li><button type="button" class="btn btn-light">비즈니스 정장</button></li>
-							<li><button type="button" class="btn btn-light">테마/이벤트 의류</button></li>
-							<li><button type="button" class="btn btn-light">언더웨어/속옷</button></li>
-							<li><button type="button" class="btn btn-light">빅사이즈</button></li>
+							<li><button type="button" class="btn btn-light">미니 스커트</button></li>
+							<li><button type="button" class="btn btn-light">롱스커트</button></li>
+							<li><button type="button" class="btn btn-light">기타(스커트/치마)</button></li>
+							<li><button type="button" class="btn btn-light">청 스커트</button></li>
+							<li><button type="button" class="btn btn-light">플리츠(주름)스커트</button></li>
+							<li><button type="button" class="btn btn-light">플레어스커트</button></li>
+							<li><button type="button" class="btn btn-light">모직/니트 스커트</button></li>
+							<li><button type="button" class="btn btn-light">쉬폰/레이스 스커트</button></li>
 						</ul>
 						<ul id="prd-ctgl02">
-							<li><button type="button" class="btn btn-light">3</button></li>
-							<li><button type="button" class="btn btn-light">걸그룹</button></li>
-							<li><button type="button" class="btn btn-light">솔로(남)</button></li>
-							<li><button type="button" class="btn btn-light">코트</button></li>
-							<li><button type="button" class="btn btn-light">긴팔 티셔츠</button></li>
-							<li><button type="button" class="btn btn-light">반바지/7~9부</button></li>
+							<li><button type="button" class="btn btn-light">기타(자켓)</button></li>
+							<li><button type="button" class="btn btn-light">기본/테일러드 자켓</button></li>
+							<li><button type="button" class="btn btn-light">트위드/체크 자켓</button></li>
+							<li><button type="button" class="btn btn-light">가죽/라이더</button></li>
+							<li><button type="button" class="btn btn-light">청/데님자켓</button></li>
 						</ul>
 						<ul id="prd-ctgl03">	
-							<li><button type="button" class="btn btn-light">4</button></li>
-							<li><button type="button" class="btn btn-light">가디건</button></li>
-							<li><button type="button" class="btn btn-light">비즈니스 정장</button></li>
-							<li><button type="button" class="btn btn-light">테마/이벤트 의류</button></li>
-							<li><button type="button" class="btn btn-light">언더웨어/속옷</button></li>
-							<li><button type="button" class="btn btn-light">빅사이즈</button></li>
+							<li><button type="button" class="btn btn-light">기타(블라우스)</button></li>
+							<li><button type="button" class="btn btn-light">쉬폰/시스루 블라우스</button></li>
+							<li><button type="button" class="btn btn-light">프릴/셔링 블라우스</button></li>
+							<li><button type="button" class="btn btn-light">레이스 블라우스</button></li>
+							<li><button type="button" class="btn btn-light">오프숄더 블라우스</button></li>
+							<li><button type="button" class="btn btn-light">민소매/홀터넷 블라우스</button></li>
+							<li><button type="button" class="btn btn-light">프린트 블라우스</button></li>
 						</ul>
 						<ul id="prd-ctgl04">	
-							<li><button type="button" class="btn btn-light">5</button></li>
-							<li><button type="button" class="btn btn-light">걸그룹</button></li>
-							<li><button type="button" class="btn btn-light">솔로(남)</button></li>
-							<li><button type="button" class="btn btn-light">코트</button></li>
-							<li><button type="button" class="btn btn-light">긴팔 티셔츠</button></li>
-							<li><button type="button" class="btn btn-light">반바지/7~9부</button></li>
+							<li><button type="button" class="btn btn-light">라운드넥 니트</button></li>
+							<li><button type="button" class="btn btn-light">기타(니트/스웨터)</button></li>
+							<li><button type="button" class="btn btn-light">브이넥 니트</button></li>
+							<li><button type="button" class="btn btn-light">폴라/터틀/하이넥니트</button></li>
+							<li><button type="button" class="btn btn-light">루즈핏 니트</button></li>
+							<li><button type="button" class="btn btn-light">롱 니트</button></li>
+							<li><button type="button" class="btn btn-light">오프숄더 니트</button></li>
 						</ul>
 						<ul id="prd-ctgl05">	
-							<li><button type="button" class="btn btn-light">6</button></li>
-							<li><button type="button" class="btn btn-light">가디건</button></li>
-							<li><button type="button" class="btn btn-light">비즈니스 정장</button></li>
-							<li><button type="button" class="btn btn-light">테마/이벤트 의류</button></li>
-							<li><button type="button" class="btn btn-light">언더웨어/속옷</button></li>
-							<li><button type="button" class="btn btn-light">빅사이즈</button></li>
-						</ul>						
+							<li><button type="button" class="btn btn-light">패딩</button></li>
+							<li><button type="button" class="btn btn-light">기타(야상/점퍼/패딩)</button></li>
+							<li><button type="button" class="btn btn-light">바람막이</button></li>
+							<li><button type="button" class="btn btn-light">야상/사파리</button></li>
+							<li><button type="button" class="btn btn-light">야구점퍼/항공점퍼/블루종</button></li>
+						</ul>	
+						
+						<ul id="prd-ctgl06">	
+							<li><button type="button" class="btn btn-light">롱 코트</button></li>
+							<li><button type="button" class="btn btn-light">반/하프 코드</button></li>
+							<li><button type="button" class="btn btn-light">트렌치 코드</button></li>
+							<li><button type="button" class="btn btn-light">기타(코트)</button></li>
+							<li><button type="button" class="btn btn-light">무스탕</button></li>
+							<li><button type="button" class="btn btn-light">모피</button></li>
+							<li><button type="button" class="btn btn-light">케이프/망토</button></li>
+						</ul>	
+						<ul id="prd-ctgl07">	
+							<li><button type="button" class="btn btn-light">라운드 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">기타(반팔 티셔츠)</button></li>
+							<li><button type="button" class="btn btn-light">민소매/나시 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">카라 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">무지/기본 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">브이넥 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">스트라이프 티셔츠</button></li>
+						</ul>	
+						<ul id="prd-ctgl08">	
+							<li><button type="button" class="btn btn-light">맨투맨 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">후드 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">후드 집업</button></li>
+							<li><button type="button" class="btn btn-light">기타(맨투맨/후드티)</button></li>
+						</ul>	
+						<ul id="prd-ctgl09">	
+							<li><button type="button" class="btn btn-light">브이넥 가디건</button></li>
+							<li><button type="button" class="btn btn-light">기타(가디건)</button></li>
+							<li><button type="button" class="btn btn-light">라운드넥 가디건</button></li>
+							<li><button type="button" class="btn btn-light">롱 가디건</button></li>
+							<li><button type="button" class="btn btn-light">루즈핏/밧시 가디건</button></li>
+							<li><button type="button" class="btn btn-light">후드 가디건</button></li>							
+						</ul>	
+						<ul id="prd-ctgl010">	
+							<li><button type="button" class="btn btn-light">일자 청바지</button></li>
+							<li><button type="button" class="btn btn-light">스키니진</button></li>
+							<li><button type="button" class="btn btn-light">기타(청바지/스키니)</button></li>
+							<li><button type="button" class="btn btn-light">부츠컷 청바지</button></li>
+							<li><button type="button" class="btn btn-light">하이웨스트진</button></li>
+							<li><button type="button" class="btn btn-light">배기/카고/오버롤</button></li>													
+						</ul>	
+						<ul id="prd-ctgl011">	
+							<li><button type="button" class="btn btn-light">일자바지/슬렉스</button></li>
+							<li><button type="button" class="btn btn-light">통/와이드 팬츠</button></li>
+							<li><button type="button" class="btn btn-light">기타(면/캐주얼 바지)</button></li>
+							<li><button type="button" class="btn btn-light">점프 수트/멜빵 바지</button></li>
+							<li><button type="button" class="btn btn-light">배기 팬츠</button></li>
+							<li><button type="button" class="btn btn-light">하이웨스트 팬츠</button></li>
+							<li><button type="button" class="btn btn-light">가죽/모직 바지</button></li>
+						</ul>
+						<ul id="prd-ctgl012">	
+							<li><button type="button" class="btn btn-light">무지/기본 셔츠</button></li>
+							<li><button type="button" class="btn btn-light">체크 셔츠</button></li>
+							<li><button type="button" class="btn btn-light">기타(셔츠/남방)</button></li>
+							<li><button type="button" class="btn btn-light">스트라이프 셔츠</button></li>
+							<li><button type="button" class="btn btn-light">루즈핏/박시 셔츠</button></li>
+							<li><button type="button" class="btn btn-light">청/데님 셔츠</button></li>
+						</ul>
+											
+						<ul id="prd-ctgl013">	
+							<li><button type="button" class="btn btn-light">트레이닝 하의</button></li>
+							<li><button type="button" class="btn btn-light">트레이닝 상의</button></li>
+							<li><button type="button" class="btn btn-light">트레이닝 세트</button></li>
+							<li><button type="button" class="btn btn-light">기타(트레이닝)</button></li>
+						</ul>	
+						<ul id="prd-ctgl014">	
+							<li><button type="button" class="btn btn-light">기타(긴팔 티셔츠)</button></li>
+							<li><button type="button" class="btn btn-light">라운드 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">무지/기본 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">스트라이프 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">폴라 티셔츠</button></li>
+							<li><button type="button" class="btn btn-light">브이넥 티셔츠</button></li>
+						</ul>
+						<ul id="prd-ctgl015">	
+							<li><button type="button" class="btn btn-light">청 반바지</button></li>
+							<li><button type="button" class="btn btn-light">기타(반바지/핫팬츠)</button></li>
+							<li><button type="button" class="btn btn-light">핫 팬츠</button></li>
+							<li><button type="button" class="btn btn-light">면 반바지</button></li>
+							<li><button type="button" class="btn btn-light">치마 바지/큐롯 팬츠</button></li>
+							<li><button type="button" class="btn btn-light">가죽/모직 반바지</button></li>
+						</ul>	
+						<ul id="prd-ctgl016">	
+							<li><button type="button" class="btn btn-light">기타(조끼/베스트)</button></li>
+							<li><button type="button" class="btn btn-light">니트 조끼</button></li>
+							<li><button type="button" class="btn btn-light">퍼 조끼</button></li>
+							<li><button type="button" class="btn btn-light">패딩 조끼</button></li>
+							<li><button type="button" class="btn btn-light">청/데님 조끼</button></li>
+						</ul>
+						<ul id="prd-ctgl017">	
+							<li><button type="button" class="btn btn-light"></button></li>
+							<li><button type="button" class="btn btn-light"></button></li>
+							<li><button type="button" class="btn btn-light"></button></li>
+							<li><button type="button" class="btn btn-light"></button></li>
+							<li><button type="button" class="btn btn-light"></button></li>
+							<li><button type="button" class="btn btn-light"></button></li>
+							<li><button type="button" class="btn btn-light"></button></li>
+							<li><button type="button" class="btn btn-light"></button></li>
+						</ul>	
 					</div>
 											
 			</div>
 			<div class="ctgl-type" style="width:100%;  height: 80px;  justify-content: center; display: flex; padding-top: 30px">
-				<input type="text" class="ptype1" 
-						id="ptype1"   placeholder="카테고리1를 선택하세요" readonly />
-				<input type="text" class="ptype2" 
-				id="ptype2"   placeholder="카테고리2를 선택하세요" readonly />
-				<input type="text" class="ptype3" 
-				id="ptype3"   placeholder="카테고리3를 선택하세요" readonly />
-				
-				<input type="hidden" class="ptype3" id ="ptype" name="ptype"
-				id="ptype3"   readonly />
+				<input type="text" class="ptype3" id ="ptype" name="ptype"
+				id="ptype3"  placeholder="카테고리를 선택하세요"  readonly  style="width:600px;" />
 			</div>
 			</div>
 	
@@ -388,47 +516,32 @@ function getEventTarget(e) {
 
 
 
-$("#prd-ctgl-dti-0 li").click(function(){
-	
-   	
+$("#prd-ctgl-dti-0 li").click(function(){   	
    var index = $("#prd-ctgl-dti-0 li").index(this);
-    element = $(this).text();
-     
+    element = $(this).text();     
      if($('#prd-ctgl'+(index)).css("display") == "none"){
     	  $('.prd-ctgl-dti-1>ul').hide();
     	  $('.prd-ctgl-dti-2>ul').hide();
-    	 $('#prd-ctgl'+(index)).show();   	  
-      }
+    	 $('#prd-ctgl'+(index)).show();   	 
+    	 }
 	 document.getElementById('ptype').value = "";
-     document.getElementById('ptype2').value ="";
-	 document.getElementById('ptype3').value = "";
-     document.getElementById('ptype1').value = element;
+     document.getElementById('ptype').value = element;
 });
 
 
-$(".prd-ctgl-dti-1 ul li").click(function(){
-	
-	
+$(".prd-ctgl-dti-1 ul li").click(function(){	
 	var index1 = $(".prd-ctgl-dti-1 ul li").index(this);
-	element2 = $(this).text();
-	
+	element2 = $(this).text();	
 	if($('#prd-ctgl0'+(index1)).css("display") == "none"){
 		 $('.prd-ctgl-dti-2>ul').hide();
 		 $('#prd-ctgl0'+(index1)).show();
 		  }
-	 document.getElementById('ptype').value = "";
-	 document.getElementById('ptype3').value = "";
-	 document.getElementById('ptype2').value = element2;
-    
+	 document.getElementById('ptype').value = element + "";
+	  document.getElementById('ptype').value = element + ">" + element2 ;
 });
 
 $(".prd-ctgl-dti-2 ul li").click(function(){
-	
-
-	element3 = $(this).text();
-	
-	 document.getElementById('ptype3').value = element3;	
-	 
+	element3 = $(this).text();	
 	 document.getElementById('ptype').value = element+">"+element2+">"+element3;
 });
 
