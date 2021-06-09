@@ -2,8 +2,12 @@ package com.joonggo.pro.regproduct.controllers;
 
 
 
+import java.io.File;
+
 import javax.inject.Inject;
 
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -11,7 +15,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.joonggo.pro.regproduct.dto.PhotoDTO;
 import com.joonggo.pro.regproduct.dto.RegproductDTO;
 import com.joonggo.pro.regproduct.service.RegproductService;
 
@@ -45,12 +52,51 @@ public class RegproductController {
 	//-------------------------------------------------------------------------------------------------
 	//  @RequestPart MultipartFile files
 	@RequestMapping(value = "/regproductinsert", method = RequestMethod.POST)
-	public String productinsert(RegproductDTO regproduct)throws Exception {
-		logger.info("RegproductController productinsert() =>" + regproduct);		
+	public String productinsert(RegproductDTO regproduct,  MultipartFile files)throws Exception {
+		logger.info("RegproductController productInsert() =>" + regproduct);		
+		logger.info("RegproductController filesinsert() =>" + files);	
+		PhotoDTO file	= new PhotoDTO();
 		
+		
+		if(files.isEmpty()) {	// 업로드할 파일이 없는 경우
 		regproductservice.productInsert(regproduct);
+		} else {	// 업로드할 파일이 있는 경우
+			// Dog.jpg => 파일이름(Dog), 확장자(jpg) 
+			//FilenameUtils : commons-io defendency를 사용.
 		
-		return "/productdtl";
+			
+			String 	fileName 			= files.getOriginalFilename();
+			String 	fileNameExtension 	= FilenameUtils.getExtension(fileName).toLowerCase();
+			File	destinationFile;
+			String	destinationFileName;
+			// fileUrl = "uploadFiles 폴더의 위치";
+			// uploadFiles 폴더의 위치 확인 : uploadFiles 우클릭 -> Properties -> Resource - > Location
+			String	fileUrl = "C:/Users/MOON/git/repository/UTS/src/main/webapp/resources/uploadimg/"; 
+			// String	fileUrl = "C:/images/uploadFiles/"; 
+			
+			do {
+				destinationFileName = RandomStringUtils.randomAlphanumeric(32) + "." + fileNameExtension;
+				destinationFile     = new File(fileUrl + destinationFileName);
+			} while(destinationFile.exists());
+			
+			
+			// MultipartFile.transferTo() : 요청 시점의 임시 파일을 로컬 파일 시스템에 영구적으로 복사해준다.
+			destinationFile.getParentFile().mkdirs();
+			
+			files.transferTo(destinationFile);
+			
+			regproductservice.productInsert(regproduct);	// 게시글 올리기
+			
+			// 파일관련 자료를 Files 테이블에 등록한다.
+			
+			file.setPno(regproduct.getPno());
+			file.setPphotoname(destinationFileName);
+			file.setPphotonname(fileName);
+			file.setPphotolocation(fileUrl);
+			regproductservice.photoInsert(file);
+		}
+		
+		return "/home/";
 	}
 	
 	@RequestMapping("/regproductdtl/{pno}")

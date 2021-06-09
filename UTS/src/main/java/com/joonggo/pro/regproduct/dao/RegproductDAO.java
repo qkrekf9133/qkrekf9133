@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.joonggo.pro.regproduct.controllers.RegproductController;
+import com.joonggo.pro.regproduct.dto.PhotoDTO;
 import com.joonggo.pro.regproduct.dto.RegproductDTO;
 
 import lombok.extern.java.Log;
@@ -31,6 +32,12 @@ public class RegproductDAO {
 	public void productInsert(RegproductDTO regproduct) throws Exception {
 		logger.info("RegProductDAO Insert() => " + regproduct);
 	sqlSession.insert(namespace+ ".productInsert", regproduct );
+		
+	}
+	
+	public void photoInsert(PhotoDTO photo) throws Exception {
+		logger.info("PhotoDTO Insert() => " + photo);
+	sqlSession.insert(namespace+ ".photoInsert", photo );
 		
 	}
 	

@@ -12,6 +12,11 @@
 	VALUES	(#{psubject},	#{pprice},	#{plocation},	#{pcontent}, 	#{pwriter},	 #{pcondition}, #{pquantity},	now(),	#{pexchange}, #{ptype} )
 </insert>
 
+<insert id="photoInsert" parameterType="com.joonggo.pro.regproduct.dto.PhotoDTO" useGeneratedKeys="true" keyProperty="photono">
+	INSERT	INTO	photo
+			(pno, photoname,	photoorname, photolocation)
+	VALUES	(#{pno}, #{pphotoname},#{pphotonname}, #{pphotolocation})
+</insert>
 
 
 <!-- 게시글 목록 보기 -->
@@ -21,7 +26,7 @@
 	
 	<!-- 게시글 세부 보기 -->
 	<select id="productDtl" resultType="com.joonggo.pro.regproduct.dto.RegproductDTO">
-	SELECT * FROM product WHERE pno = #{bno};
+	SELECT * FROM product WHERE pno = #{pno};
 	</select>
 
 </mapper>

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.joonggo.pro.regproduct.controllers.RegproductController;
 import com.joonggo.pro.regproduct.dao.RegproductDAO;
+import com.joonggo.pro.regproduct.dto.PhotoDTO;
 import com.joonggo.pro.regproduct.dto.RegproductDTO;
 
 import lombok.extern.java.Log;
@@ -30,7 +31,13 @@ public class RegproductService {
 	public void productInsert(RegproductDTO regproduct) throws Exception {
 		logger.info("RegproductService productinsert() =>" + regproduct);
 		regproductDAO.productInsert(regproduct);
-			
+	
+	}
+	
+	public void photoInsert(PhotoDTO Photo) throws Exception {
+		logger.info("RegproductService productinsert() =>" + Photo);
+		regproductDAO.photoInsert(Photo);
+	
 	}
 	
 	

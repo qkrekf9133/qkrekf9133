@@ -16,7 +16,7 @@
 		<%@ include file="../include/topmenu.jsp" %>
 
 		
-	<form class="form-horizontal" name = "regproductForm" action="/regproduct/regproductinsert"  method="post" >
+	<form class="form-horizontal" name = "regproductForm" action="/regproduct/regproductinsert"  method="post" enctype="multipart/form-data" >
 			<div>
 				<h2 style="padding-left: 30px;">기본정보
 					<span style="font-size: 2rem;  color: rgb(255, 80, 88);">*필수사항</span>
@@ -33,13 +33,13 @@
 			 		<ul class="prd-photo1">
 			 			<li class="prd-photo" >
 			 				"이미지 등록"
-			 				<input id="uploadFile" type="file" name="name" accept="image/jpg, image/jpeg, image/png"  onchange="setThumbnail(event);" multiple>
-			 				
+			 				<input id="uploadFile" type="file" name="files" 
+			 				accept="image/jpg, image/jpeg, image/png"  onchange="setThumbnail(event);"multiple="multiple"/>
 			 			</li>
 		 				<li id="image_container"></li>
-		 				
-		 				
-			 		</ul>
+		 			</ul>
+		 				<div id="file_container">
+		 				</div>
 		 				<div class="prd-dti">
 		 					- 상품 이미지는 640x640에 최적화 되어 있습니다.<br>
 							- 이미지는 상품등록 시 정사각형으로 짤려서 등록됩니다.<br>
@@ -459,7 +459,7 @@
 		<div class="form-group">
 			<h4 class="col-sm-2">가격<span>*</span></h4>
 			<div class="col-sm-10 " >
-				<input type="text" name="pprice" style="margin-top: 10px" placeholder="희망 가격을 적어주세요">&nbsp;원
+				<input type="number" name="pprice" style="margin-top: 10px" placeholder="희망 가격을 적어주세요">&nbsp;원
 				<br>
 				<input type="checkbox" name="chk_info" value="HTML" style="margin-top: 10px">&nbsp;배송비포함
 				<input type="checkbox" name="chk_info" value="HTML" style="margin-top: 10px">&nbsp;가격협의 가능
@@ -483,7 +483,7 @@
 			<div class="form-group">
 			<h4 class="col-sm-2">수량<span>*</span></h4>
 			
-			<input type="text" name="pquantity" style="margin-top: 10px" placeholder="수량을 설정해주세요" >&nbsp; 개
+			<input type="number" name="pquantity" style="margin-top: 10px" placeholder="수량을 설정해주세요" >&nbsp; 개
 		
 		
 		</div>
@@ -537,12 +537,12 @@ $(".prd-ctgl-dti-1 ul li").click(function(){
 		 $('#prd-ctgl0'+(index1)).show();
 		  }
 	 document.getElementById('ptype').value = element + "";
-	  document.getElementById('ptype').value = element + ">" + element2 ;
+	  document.getElementById('ptype').value = element  + "  >  " + element2 ;
 });
 
 $(".prd-ctgl-dti-2 ul li").click(function(){
 	element3 = $(this).text();	
-	 document.getElementById('ptype').value = element+">"+element2+">"+element3;
+	 document.getElementById('ptype').value = element+"  >  "+element2+"  >  "+element3;
 });
 
 
@@ -587,20 +587,36 @@ function daumZipCode() {
 	}).open();
 }
 		
+var productimg = [];
 
-
-
-
+//파일용량을 계산하는 함수
+function uploadFileSizeCheck() {
+    if(document.getElementById("uploadFile").value != "") {
+	    var fileSize = document.getElementById("uploadFile").files[0].size;
+	    var maxSize = 10 * 1024 * 1024; //10MB
+	 
+	    if(fileSize > maxSize) {
+	       alert("첨부파일 사이즈는 10MB 이내로 등록하셔야 합니다.");
+	       return false;
+	    } else {
+	    	
+	       //alert("파일을 등록합니다.");
+	       	      
+	       return true;
+	     
+    	}
+    }
+}
 		
 
 function setThumbnail(event) {
 	var reader = new FileReader(); 
 	reader.onload = function(event) { 
-				
-	
-		var img = document.createElement("img");
+		
+ 		var img = document.createElement("img");
 		img.setAttribute("src", event.target.result);
-	
+		img.setAttribute("name", "files");
+		img.setAttribute("multiple","multiple");
 		//document.getElementById("uploadFile").files[0].size;
 
 		// 선택한 파일의 용량계산을 uplsoadFileSizeCheck()에서 가져온다.
@@ -617,52 +633,12 @@ function setThumbnail(event) {
 		reader.readAsDataURL(event.target.files[0]); 
 }
 
-// 파일용량을 계산하는 함수
-function uploadFileSizeCheck() {
-    if(document.getElementById("uploadFile").value != "") {
-	    var fileSize = document.getElementById("uploadFile").files[0].size;
-	    var maxSize = 10 * 1024 * 1024; //10MB
-	 
-	    if(fileSize > maxSize) {
-	       alert("첨부파일 사이즈는 10MB 이내로 등록하셔야 합니다.");
-	       return false;
-	    } else {
-	    	
-	       //alert("파일을 등록합니다.");
-	       return true;
-    	}
-    }
-}
 
 
 
 
-$("li#image_container img").each(function(index, src) {
-   
-	console.log(src);
-  });
 
-/*
-$("input[type=file]").bind( 'change', function (e) {
-            if( !$(this).val() ) return;
-             
-            var f = this.files[0];
-            var size = f.size || f.fileSize;
-             
-            var limit = 10000000;
-                             
-         //  alert( id + ' / ' + limit );
-                         
-            if( size > limit )
-            {
-                alert( '파일용량은 10mb 를 넘을수 없습니다.' );
-                $(this).val('');
-                return;
-            }
-                     
-        $(this).parent().find('input[type=text]').val( $(this).val() );
-})
-*/
+
 
 
 </script>
