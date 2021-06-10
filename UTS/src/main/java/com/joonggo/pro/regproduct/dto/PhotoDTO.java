@@ -6,7 +6,7 @@ import lombok.Data;
 public class PhotoDTO {
 	private int 		photono;
 	private int 		pno;
-	private String 		pphotoname;
-	private String 		pphotonname;
-	private String 		pphotolocation;
+	private String 		photoname;
+	private String 		photoorname;
+	private String 		photolocation;
 }

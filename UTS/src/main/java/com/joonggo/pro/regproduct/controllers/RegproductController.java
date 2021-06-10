@@ -3,6 +3,7 @@ package com.joonggo.pro.regproduct.controllers;
 
 
 import java.io.File;
+import java.sql.Date;
 
 import javax.inject.Inject;
 
@@ -15,7 +16,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.joonggo.pro.regproduct.dto.PhotoDTO;
@@ -55,16 +55,14 @@ public class RegproductController {
 	public String productinsert(RegproductDTO regproduct,  MultipartFile files)throws Exception {
 		logger.info("RegproductController productInsert() =>" + regproduct);		
 		logger.info("RegproductController filesinsert() =>" + files);	
+		
 		PhotoDTO file	= new PhotoDTO();
-		
-		
+				
 		if(files.isEmpty()) {	// 업로드할 파일이 없는 경우
 		regproductservice.productInsert(regproduct);
 		} else {	// 업로드할 파일이 있는 경우
 			// Dog.jpg => 파일이름(Dog), 확장자(jpg) 
-			//FilenameUtils : commons-io defendency를 사용.
-		
-			
+			//FilenameUtils : commons-io defendency를 사용.		
 			String 	fileName 			= files.getOriginalFilename();
 			String 	fileNameExtension 	= FilenameUtils.getExtension(fileName).toLowerCase();
 			File	destinationFile;
@@ -86,26 +84,34 @@ public class RegproductController {
 			files.transferTo(destinationFile);
 			
 			regproductservice.productInsert(regproduct);	// 게시글 올리기
-			
+			 
 			// 파일관련 자료를 Files 테이블에 등록한다.
 			
 			file.setPno(regproduct.getPno());
-			file.setPphotoname(destinationFileName);
-			file.setPphotonname(fileName);
-			file.setPphotolocation(fileUrl);
+			file.setPhotoname(destinationFileName);
+			file.setPhotoorname(fileName);
+			file.setPhotolocation(fileUrl);
+			
 			regproductservice.photoInsert(file);
 		}
 		
-		return "/home/";
+		return "redirect:/regproduct/regproductdtl/"+ regproduct.getPno();
 	}
 	
+	
+	//-------------------------------------------------------------
+	// 상세페이지
+	//-------------------------------------------------------------
 	@RequestMapping("/regproductdtl/{pno}")
 	public String productDtl(@PathVariable int pno, Model model) throws Exception {
 		logger.info("regproductdtl list ==>" + pno);
 		
-		model.addAttribute("detail", regproductservice.productDtl(pno));
+		model.addAttribute("detail", 		regproductservice.productDtl(pno));
+		
+		model.addAttribute("photodetail", 	regproductservice.photoDtl(pno));
 		return "/regproduct/regproductdtl";
 	}
+	
 	
 
 	}

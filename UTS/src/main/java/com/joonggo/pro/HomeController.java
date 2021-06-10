@@ -41,10 +41,7 @@ public class HomeController {
 		//게시글 목록 보여주기 화면으로 가기 전에 보여줄 데이터를 가져와서 model에 담든다.
 				List<RegproductDTO> productList = regproductservice.findAll();
 				model.addAttribute("productList", productList);
-				
-				//model.addAttribute("list", boardService2.boardList());
-		
-				//model.addAttribute("",  );
+			
 		
 		return "home";
 	}

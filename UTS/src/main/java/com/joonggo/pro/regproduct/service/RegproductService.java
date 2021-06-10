@@ -53,6 +53,14 @@ public class RegproductService {
 			
 	}
 	
+	  public PhotoDTO photoDtl(int pno) throws Exception {
+	   logger.info("RegproductService productinsert() =>" ); 
+	  
+	   return regproductDAO.photoDtl(pno);
+	  
+	  }
+	
+	
 	
 
 }

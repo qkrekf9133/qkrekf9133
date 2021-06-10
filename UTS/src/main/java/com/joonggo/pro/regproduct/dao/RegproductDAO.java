@@ -18,46 +18,45 @@ import lombok.extern.java.Log;
 @Log
 @Repository
 public class RegproductDAO {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(RegproductController.class);
 
 	@Inject
 	SqlSession sqlSession;
-	
+
 	private static String namespace = "com.joonggo.pro.mappers.regproductmapper";
-	//-------------------------------------------------------------------------------------------------
+	// -------------------------------------------------------------------------------------------------
 	// 게시글 등록
-	//-------------------------------------------------------------------------------------------------
+	// -------------------------------------------------------------------------------------------------
 
 	public void productInsert(RegproductDTO regproduct) throws Exception {
 		logger.info("RegProductDAO Insert() => " + regproduct);
-	sqlSession.insert(namespace+ ".productInsert", regproduct );
-		
+		sqlSession.insert(namespace + ".productInsert", regproduct);
+
 	}
-	
+
 	public void photoInsert(PhotoDTO photo) throws Exception {
 		logger.info("PhotoDTO Insert() => " + photo);
-	sqlSession.insert(namespace+ ".photoInsert", photo );
-		
+		sqlSession.insert(namespace + ".photoInsert", photo);
+
 	}
-	
+
 	public List<RegproductDTO> findAll() throws Exception {
-		logger.info("RegProductDAO Insert() => " );
-	return sqlSession.selectList(namespace+ ".findAll");
-		
+		logger.info("RegProductDAO Insert() => ");
+		return sqlSession.selectList(namespace + ".findAll");
+
 	}
-	
+
 	public RegproductDTO productDtl(int pno) throws Exception {
-		logger.info("productDtl Insert() => " );
-	return sqlSession.selectOne(namespace+ ".productDtl", pno);
-		
+		logger.info("productDtl Insert() => ");
+		return sqlSession.selectOne(namespace + ".productDtl", pno);
+
 	}
-	
-	/*
-	 * public int photoInsert(PhotoDTO photo) {
-	 * log.info("RegProductDAO Insert() => " + photo); return
-	 * sqlSession.insert(namespace+ ".productInsert", photo );
-	 * 
-	 * }
-	 */
+
+	  public PhotoDTO photoDtl(int pno) {
+	  log.info("RegProductDAO Insert() => " + pno);
+	  
+		 return sqlSession.selectOne(namespace+ ".photoDtl", pno);
+	  
+	  }
 }

@@ -7,13 +7,13 @@
 	<title>Thymeleaf3</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	
-	<%@ include file="../include/layout.jsp" %>
+<%@ include file="../include/layout.jsp" %>
 
 </head>
 <body>
 
 <div class="container">
-		<%@ include file="../include/topmenu.jsp" %>
+	<%@ include file="../include/topmenu.jsp" %>
 
 		
 	<form class="form-horizontal" name = "regproductForm" action="/regproduct/regproductinsert"  method="post" enctype="multipart/form-data" >
@@ -34,7 +34,7 @@
 			 			<li class="prd-photo" >
 			 				"이미지 등록"
 			 				<input id="uploadFile" type="file" name="files" 
-			 				accept="image/jpg, image/jpeg, image/png"  onchange="setThumbnail(event);"multiple="multiple"/>
+			 				accept="image/jpg, image/jpeg, image/png"  onchange="setThumbnail(event);" multiple/>
 			 			</li>
 		 				<li id="image_container"></li>
 		 			</ul>
@@ -513,7 +513,6 @@ function getEventTarget(e) {
     e = e || window.event;
     return e.target || e.srcElement; 
 }
-
 
 
 $("#prd-ctgl-dti-0 li").click(function(){   	

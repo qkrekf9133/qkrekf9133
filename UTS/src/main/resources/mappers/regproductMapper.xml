@@ -6,16 +6,16 @@
 <mapper namespace="com.joonggo.pro.mappers.regproductmapper">
 
 <!-- 게시글 넣기 -->
-<insert id="productInsert" parameterType="com.joonggo.pro.regproduct.dto.RegproductDTO" useGeneratedKeys="true" keyProperty="bno">
+<insert id="productInsert" parameterType="com.joonggo.pro.regproduct.dto.RegproductDTO" useGeneratedKeys="true" keyProperty="pno">
 	INSERT	INTO	product
-			(psubject, 		pprice, 	plocation, 		pcontent, 		pwriter,	 pcondition,	 pquantity, pregdate,  pexchange, ptype)
-	VALUES	(#{psubject},	#{pprice},	#{plocation},	#{pcontent}, 	#{pwriter},	 #{pcondition}, #{pquantity},	now(),	#{pexchange}, #{ptype} )
+			( psubject, 		pprice, 	plocation, 		pcontent, 		pwriter,	 pcondition,	 pquantity, pregdate,  pexchange, ptype)
+	VALUES	( #{psubject},	#{pprice},	#{plocation},	#{pcontent}, 	#{pwriter},	 #{pcondition}, #{pquantity},	now(),	#{pexchange}, #{ptype} )
 </insert>
 
 <insert id="photoInsert" parameterType="com.joonggo.pro.regproduct.dto.PhotoDTO" useGeneratedKeys="true" keyProperty="photono">
 	INSERT	INTO	photo
 			(pno, photoname,	photoorname, photolocation)
-	VALUES	(#{pno}, #{pphotoname},#{pphotonname}, #{pphotolocation})
+	VALUES	(#{pno}, #{photoname}, #{photoorname}, #{photolocation})
 </insert>
 
 
@@ -27,6 +27,11 @@
 	<!-- 게시글 세부 보기 -->
 	<select id="productDtl" resultType="com.joonggo.pro.regproduct.dto.RegproductDTO">
 	SELECT * FROM product WHERE pno = #{pno};
+	</select>
+	
+	<!-- 사진전송  -->
+	<select id="photoDtl" resultType="com.joonggo.pro.regproduct.dto.PhotoDTO">
+	SELECT * FROM photo WHERE pno = #{pno};
 	</select>
 
 </mapper>
