@@ -12,6 +12,7 @@ import com.joonggo.pro.regproduct.controllers.RegproductController;
 import com.joonggo.pro.regproduct.dao.RegproductDAO;
 import com.joonggo.pro.regproduct.dto.PhotoDTO;
 import com.joonggo.pro.regproduct.dto.RegproductDTO;
+import com.joonggo.pro.regproduct.dto.productListDTO;
 
 import lombok.extern.java.Log;
 
@@ -23,7 +24,6 @@ public class RegproductService {
 	
 	@Inject
 	RegproductDAO regproductDAO;
-	
 	//-------------------------------------------------------------------------------------------------
 	// 게시글 등록
 	//-------------------------------------------------------------------------------------------------
@@ -59,7 +59,13 @@ public class RegproductService {
 	   return regproductDAO.photoDtl(pno);
 	  
 	  }
+	  
 	
+	  public List<productListDTO> homeList() throws Exception {
+			logger.info("RegproductService homeList() =>" );
+			return regproductDAO.homeList();
+				
+		}
 	
 	
 

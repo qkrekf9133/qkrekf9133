@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.joonggo.pro.regproduct.dto.RegproductDTO;
+import com.joonggo.pro.regproduct.dto.productListDTO;
 import com.joonggo.pro.regproduct.service.RegproductService;
 
 import lombok.extern.java.Log;
@@ -39,9 +40,8 @@ public class HomeController {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		//게시글 목록 보여주기 화면으로 가기 전에 보여줄 데이터를 가져와서 model에 담든다.
-				List<RegproductDTO> productList = regproductservice.findAll();
-				model.addAttribute("productList", productList);
-			
+			List<productListDTO> productList = regproductservice.homeList();
+			model.addAttribute("productList", productList);
 		
 		return "home";
 	}

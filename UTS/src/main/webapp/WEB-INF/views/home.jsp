@@ -67,7 +67,7 @@
 				<c:forEach var="productList" items="${productList}">
 					<div class="main-prd-box">
 					<a class="link-prod" href="/regproduct/regproductdtl/${productList.pno}"></a>
-						<img src="/../resources/uploadimg/${photodetail.photoname}" class="main-prd-item-img" /> <!-- 상품이미지 -->
+						<img src="/../resources/uploadimg/${productList.photoname}" class="main-prd-item-img" /> <!-- 상품이미지 -->
 						<ul class="main-prd-item">
 							<li class="prd-item-company">${productList.psubject}</li> <!-- 제목 -->
 							<li class="prd-item-name">${productList.ptype}</li> <!-- 상품종류 -->

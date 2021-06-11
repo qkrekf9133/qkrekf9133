@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.joonggo.pro.regproduct.controllers.RegproductController;
 import com.joonggo.pro.regproduct.dto.PhotoDTO;
 import com.joonggo.pro.regproduct.dto.RegproductDTO;
+import com.joonggo.pro.regproduct.dto.productListDTO;
 
 import lombok.extern.java.Log;
 
@@ -59,4 +60,11 @@ public class RegproductDAO {
 		 return sqlSession.selectOne(namespace+ ".photoDtl", pno);
 	  
 	  }
+	  
+		public List<productListDTO> homeList() throws Exception {
+			logger.info("RegProductDAO homeList() => ");
+			return sqlSession.selectList(namespace + ".homeList");
+
+		}
+
 }

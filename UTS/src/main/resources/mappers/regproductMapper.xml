@@ -33,5 +33,12 @@
 	<select id="photoDtl" resultType="com.joonggo.pro.regproduct.dto.PhotoDTO">
 	SELECT * FROM photo WHERE pno = #{pno};
 	</select>
+	
+		<!-- 홈페이지에서 보여줄 정보 구하기 -->
+	<select id="homeList" resultType="com.joonggo.pro.regproduct.dto.productListDTO">
+	SELECT 	pro.pno, pro.psubject, pro.ptype, pro.pprice, pro.pquantity, pho.photoname, pho.photolocation 
+	FROM 	product pro, photo pho
+	WHERE	pro.pno = pho.pno;
+	</select>
 
 </mapper>
