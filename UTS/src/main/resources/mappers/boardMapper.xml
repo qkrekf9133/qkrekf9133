@@ -13,7 +13,7 @@
 	</if>
 </sql>
 
-<insert id="insert" parameterType="com.joonggo.pro.board.dto.boardVO">
+<insert id="insert" parameterType="com.joonggo.pro.board.dto.boardVO" useGeneratedKeys="true" keyProperty="bno">
 	INSERT INTO jboard (title, writer, content, regdate)
 				VALUES (#{title},  #{writer}, #{content}, now())
 </insert>
@@ -74,6 +74,12 @@ SELECT	*
 FROM	jboard
 WHERE	BNO		= #{bno}
 </select>
+
+<insert id="photoInsert" parameterType="com.joonggo.pro.board.dto.PhotoDTO" useGeneratedKeys="true" keyProperty="photono">
+	INSERT	INTO	photo
+			(bno, photoname, photoorname, photolocation)
+	VALUES	(#bno ,#{pphotoname}, #{pphotonname}, #{pphotolocation})
+</insert>
 
 
 </mapper>

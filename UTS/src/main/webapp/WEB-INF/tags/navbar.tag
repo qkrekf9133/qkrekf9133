@@ -1,4 +1,5 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link rel="stylesheet" type="text/css" href="../../resources/css/index.css" />
 <nav class="navbar navbar-fixed-top navbar-light bg-light mainnavbar">
@@ -57,10 +58,18 @@
 		            </span>
 		            </div>
 		      	 </form>
+		  <c:if test="${member == null}"> 
 			<div class="top-btn navbar-right ">
-				 <a class="btn btn-success  btn-sm" href="#">로그인</a>
-				 <a class="btn btn-primary  btn-sm" href="#">회원가입</a>
+				 <a class="btn btn-success  btn-sm" href="/Logon/Login">로그인</a>
+				 <a class="btn btn-primary  btn-sm" href="/Join/Joinarticle">회원가입</a>
 			</div>
+			</c:if>
+			<c:if test="${member != null}">
+			<div class="top-btn navbar-right ">
+				 <a class="btn btn-success  btn-sm" href="#">내상점</a>
+				 <a class="btn btn-primary  btn-sm" href="#">회원정보</a>
+			</div>
+			</c:if>
 			</div>
 			
 		</div>

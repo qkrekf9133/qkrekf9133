@@ -17,7 +17,7 @@
 	</select>
 	
 	<!-- 댓글 등록 -->
-	<insert id="commentInsert" parameterType="com.joonggo.pro.board.dto.CommentDTO">
+	<insert id="commentInsert" parameterType="com.joonggo.pro.board.dto.CommentDTO" useGeneratedKeys="true" keyProperty="cno">
 	INSERT	INTO	JCOMMENT
 			(CNO,		BNO,	CONTENT,	WRITER,		REG_DATE)
 	VALUES	(#{cno},	#{bno},	#{content},	#{writer},	NOW() )

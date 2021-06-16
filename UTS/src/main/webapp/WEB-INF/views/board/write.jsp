@@ -19,7 +19,7 @@
 	<style>
 	body {
 	 padding-top: 125px;
-	 text-align: center;
+	 
 	}
 	form-group {
 		display: flex;
@@ -54,7 +54,7 @@
 		<div class="form-group">
 			<label class="control-label col-sm-2">작성자</label>
 			<div class="col-sm-9">
-				<input type="text" class="form-control" name="writer" maxlength="50" value="${member.nickname}" readonly/>
+				<input type="text" class="form-control" name="writer" maxlength="50" placeholder="Enter Writer"/>
 			</div>
 		</div>
 		<div class="form-group">

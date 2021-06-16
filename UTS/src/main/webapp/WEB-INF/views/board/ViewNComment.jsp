@@ -19,7 +19,7 @@
 	<style>
 	body {
 	 
-	 text-align: center;
+	 
 	}
 	form-group {
 		display: flex;
@@ -30,7 +30,7 @@
 
 <div class="container">
 	<form class="form-horizontal" method="post">
-	<div class="form-group">
+		<div class="form-group">
 			<div style="text-align: center; align-item: center; justify-content: center;">
 				<h2>게시글 보기</h2>
 			</div>
@@ -49,17 +49,20 @@
 				<input type="text" class="form-control" name="writer" maxlength="30" value="${view.writer}" readonly="readonly"/>
 			</div>
 		</div>
-		
-		
-		<%-- <div class="form-group">
-			<label class="control-label col-sm-2">내  용</label>
+		<!-- <div class="form-group photo">
+			<label class="control-label col-sm-2">사진</label>
 			<div class="col-sm-8">
-				<textarea rows="10" cols="100" name="content" readonly="readonly">${view.content}</textarea>
+				<input type="text" class="form-control" name="photo"
 			</div>
-		</div> --%>
+		</div> -->
+	
+		
 		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-7">
-				<textarea rows="15" cols="110" readonly="readonly">${view.content}</textarea>
+			<div class="col-sm-offset-2 col-sm-8" >
+				<%-- <c:forEach var="productList" items="${boardPhotoList}">
+<img src="/../../resources/uploadimg/${productList.photoname}" class="main-prd-item-img" /> 
+				</c:forEach> --%>
+				<div style="border: 1px solid; min-height: 500px;">${view.content}</div>
 			</div>
 		</div>
 		<div class="form-group">
@@ -70,17 +73,22 @@
 			</div>
 		</div>
 		
-		<div class="form-group">
+		<div class="form-group" style="text-align: center;">
 			<div>
 				<a class="btn btn-primary" href="/board/update?bno=${view.bno}">수정</a>&nbsp;&nbsp;
 				<a class="btn btn-danger"  href="/board/delete?bno=${view.bno}">삭제</a>
 			</div>
 		</div>
 	</form>
+	<!-- 저장된 댓글을 보여주는 영역 -->
+	<div class="container">
+		댓글
+		<div class="commentList"></div>
+	</div>
 	
 	<!-- 댓글을 입력하는 영역 -->
 	<div class="container">
-		<label for="comment">댓글</label>
+		<label for="comment"></label>
 		<form name="commentInsertForm">
 			<div class="input-group">
 				<input type="hidden" name="bno" value="${view.bno}"/>
@@ -92,10 +100,6 @@
 		</form>
 	</div>
 	
-	<!-- 저장된 댓글을 보여주는 영역 -->
-	<div class="container">
-		<div class="commentList"></div>
-	</div>
 	
 </div>
 
@@ -106,7 +110,6 @@
 <script>
 $(function() {
 	$('#btn-delete').click(function(){
-		if(confirm("삭제하시겠습니까?")) {
 			self.location.href = "/board/delete?bno=${boardVO.bno}";
 		}
 	})
