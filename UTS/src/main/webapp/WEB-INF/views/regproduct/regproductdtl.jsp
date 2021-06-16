@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="c"   		uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" 		uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page session="false" %>
+<%@ page session="true" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <head>
 	<title>Thymeleaf3</title>
@@ -72,6 +72,17 @@
 .content-box-dtl2{
 	 display: none;
 	}
+	
+	
+.item{
+  text-align: center;
+}	
+.img-responsive{
+	width: 100%;
+    height: 100%;
+  
+    
+	}
 
 </style>
 
@@ -89,7 +100,7 @@
 	</div>
 	
 	<div class="main-info" style="padding-top: 100px">
-		<div class="col-sm-5"style="width: 400px; height: 400px; ">
+		<div class="col-sm-5" style="width: 400px; height: 400px; ">
 		
 		 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
@@ -102,7 +113,7 @@
 		<div class="carousel-inner">
 			<div class="item active" >  
 				<!-- class="img-responsive center-block" => 반응형 이미지를 가운데에 정렬한다. -->
-				<img class="img-responsive center-block" src="/../../resources/uploadimg/${photodetail.photoname}"/>
+				<img class="img-responsive center-block" src="/../../../resources/uploadimg/${photodetail.photoname}" style="height: 100%;"/>
 				<!-- carousel에 설명을 달아준다. -->
 				<div class="carousel-caption">
 					
@@ -143,13 +154,14 @@
 			<div class="psubject">${detail.psubject}</div>
 			
 			<div class="pprice"><fmt:formatNumber value="${detail.pprice}" type="number" />원</div>
+			<div class="col-sm-offset-3 col-sm-6">${detail.ppriceinfo}</div>
 			<hr style="border: solid 1px gray">
 		</div>
 			<div class="dtlinfo">
 			<div>
-				<div class="col-sm-2">1</div>
-				<div class="col-sm-2" ></div>
-				<div class="col-sm-2">3</div>
+				<div class="col-sm-2">찜버튼</div>
+				<div class="col-sm-2" >조회수 버튼</div>
+				<div class="col-sm-2"></div>
 				<div class="col-sm-6">4</div>
 			</div>	
 				<div class="dtlinfo-list" style="padding-top:30px;">
@@ -185,7 +197,7 @@
 			
 				<button type="button" class="button-list-btn btn btn-info btn-lg ">찜</button>
 				<button type="button" class="button-list-btn btn btn-warning btn-lg">연락하기</button>
-				<button type="button" class="button-list-btn btn btn-danger btn-lg">Danger</button>
+				<button type="button" class="button-list-btn btn btn-danger btn-lg">구입하기</button>
 			</div>						
 		</div> <!-- class="col-sm-7" 끝 -->
 		</div><!-- main-info 끝 --> 
@@ -234,28 +246,8 @@
 	
 	
 	
-	function timeForToday(${detail.pregdate}) {
-        const today = new Date();
-        const timeValue = new Date(${detail.pregdate});
-
-        const betweenTime = Math.floor((today.getTime() - timeValue.getTime()) / 1000 / 60);
-        if (betweenTime < 1) return '방금전';
-        if (betweenTime < 60) {
-            return `${betweenTime}분전`;
-        }
-
-        const betweenTimeHour = Math.floor(betweenTime / 60);
-        if (betweenTimeHour < 24) {
-            return `${betweenTimeHour}시간전`;
-        }
-
-        const betweenTimeDay = Math.floor(betweenTime / 60 / 24);
-        if (betweenTimeDay < 365) {
-            return `${betweenTimeDay}일전`;
-        }
-
-        return `${Math.floor(betweenTimeDay / 365)}년전`;
- }
+	
+	
 </script>
 
 </body>

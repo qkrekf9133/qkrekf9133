@@ -25,9 +25,15 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.joonggo.pro" />
-	<context:component-scan base-package="com.joonggo.proregproduct.controller" />
+	<context:component-scan base-package="com.joonggo.pro.regproduct" />
+	<context:component-scan base-package="com.joonggo.pro.regproduct.controller" />
+	
+	<context:component-scan base-package="com.joonggo.pro.login" />
+	<context:component-scan base-package="com.joonggo.pro.login.controller" />
 	
 	
+	<context:component-scan base-package="com.joonggo.pro.board" />
+	<context:component-scan base-package="com.joonggo.pro.board.controller" />
 		<!-- 파일 업로드 관련 설정 -->
 	<!-- 스프링프레임웍에 내장된 CommonsMultipartResolver를 등록한다. -->
 	<beans:bean id="multipartResolver"

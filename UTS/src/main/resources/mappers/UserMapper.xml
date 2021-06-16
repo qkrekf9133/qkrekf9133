@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- 회원가입 -->
+	<mapper namespace="com.joonggo.pro.mappers.UserMapper">
+		
+		<insert id="join">
+			insert into JOINUSER(
+			  id,password,name,nickname,zipcode,address,daddress,email,phone,reg_date
+			) values (
+			#{id},
+			#{password},
+			#{name},
+			#{nickname},
+			#{zipcode},
+			#{address},
+			#{daddress},
+			#{email},
+			#{phone},
+			#{reg_date}
+			)
+		</insert>
+	
+	<!-- 아이디 중복체크 -->
+	<select id = "idCheck" parameterType="com.joonggo.pro.login.dto.UserDTO" resultType="int">
+		SELECT COUNT(*) FROM JOINUSER
+		WHERE id = #{id}
+	</select>
+	
+		
+	<!-- 닉네임 중복체크 -->
+	<select id = "nicknameCheck" parameterType="com.joonggo.pro.login.dto.UserDTO" resultType="int">
+		SELECT COUNT(*) FROM JOINUSER
+		WHERE nickname = #{nickname}
+	</select>
+	
+	    	
+    <!-- 회원정보 수정 -->
+	<update id="JoinUpdate">
+	UPDATE	JOINUSER 
+	SET 	password = #{password},
+			nickname = #{nickname},
+			zipcode  = #{zipcode},
+			address  = #{address},
+			daddress = #{daddress},
+			email 	 = #{email},
+			phone 	 = #{phone}
+			
+	WHERE 	id 	= #{id}
+	</update>
+	
+	<!-- 회원정보 탈퇴 -->
+	<delete id="JoinDelete">
+	DELETE FROM JOINUSER
+	WHERE id = #{id}
+	  AND password = #{password} 	
+	</delete>
+
+	
+	
+	</mapper>

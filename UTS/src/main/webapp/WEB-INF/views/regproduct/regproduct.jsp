@@ -1,4 +1,4 @@
-<%@ page session="false" %>
+<%@ page session="true" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"   		uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" 		uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -433,11 +433,11 @@
 		<div class="form-group">
 			<h4 class="col-sm-2">상태<span>*</span></h4>
 			<div class="col-sm-10 " >
-				<input type="checkbox" name="pcondition" value="미개봉" style="margin-top: 10px">미개봉
-				<input type="checkbox" name="pcondition" value="신품급(개봉)" style="margin-top: 10px">신품급(개봉)
-				<input type="checkbox" name="pcondition" value="사용감있음" style="margin-top: 10px">사용감있음
-				<input type="checkbox" name="pcondition" value="손상있음" style="margin-top: 10px">손상있음
-				<input type="checkbox" name="pcondition" value="수리내역있음" style="margin-top: 10px">수리내역있음
+				<input id="checkbox1" type="checkbox" name="pcondition" value="미개봉" style="margin-top: 10px">미개봉
+				<input id="checkbox" type="checkbox" name="pcondition" value="신품급(개봉)" style="margin-top: 10px">신품급(개봉)
+				<input id="checkbox" type="checkbox" name="pcondition" value="사용감있음" style="margin-top: 10px">사용감있음
+				<input id="checkbox" type="checkbox" name="pcondition" value="손상있음" style="margin-top: 10px">손상있음
+				<input id="checkbox" type="checkbox" name="pcondition" value="수리내역있음" style="margin-top: 10px">수리내역있음
 			</div>
 		
 		</div>
@@ -461,8 +461,8 @@
 			<div class="col-sm-10 " >
 				<input type="number" name="pprice" style="margin-top: 10px" placeholder="희망 가격을 적어주세요">&nbsp;원
 				<br>
-				<input type="checkbox" name="chk_info" value="HTML" style="margin-top: 10px">&nbsp;배송비포함
-				<input type="checkbox" name="chk_info" value="HTML" style="margin-top: 10px">&nbsp;가격협의 가능
+				<input type="checkbox" name="ppriceinfo" value="배송비포함" style="margin-top: 10px">&nbsp;배송비포함
+				<input type="checkbox" name="ppriceinfo" value="가격협의 가능" style="margin-top: 10px">&nbsp;가격협의 가능
 			</div>
 		
 		</div>
@@ -479,14 +479,12 @@
 		
 		<hr style="border: solid 1px gray">
 		
-		
-			<div class="form-group">
+		<div class="form-group">
 			<h4 class="col-sm-2">수량<span>*</span></h4>
-			
 			<input type="number" name="pquantity" style="margin-top: 10px" placeholder="수량을 설정해주세요" >&nbsp; 개
 		
-		
 		</div>
+		<input type="hidden" name="pwriter" value="${member.nickname}" />
 		
 		<hr style="border: solid 1px gray">
 		<div class="col-sm-offset-11 col-sm-1">
@@ -544,6 +542,13 @@ $(".prd-ctgl-dti-2 ul li").click(function(){
 	 document.getElementById('ptype').value = element+"  >  "+element2+"  >  "+element3;
 });
 
+("#checkbox1").check(function(){
+	
+	alert("작동하네?");
+
+	
+});
+
 
 function daumZipCode() {
 	new daum.Postcode({
@@ -574,17 +579,18 @@ function daumZipCode() {
 				
 				//조합형 주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
 				fullAddr += ' '+subAddr;
-				
+			
 			}
 			//우편번호와 주소정보를 행당 필드에 나타낸다.
 			//5자리의 새 우편번호
 		
 			document.getElementById('address01').value = fullAddr;
-			//커서를 상세주소 입력필드로 이동시킨다.
-			document.getElementById('address02').focus();
+			
 		}
-	}).open();
-}
+	}).open({
+	popupName: 'post'
+	});
+	}
 		
 var productimg = [];
 

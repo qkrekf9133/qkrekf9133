@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.joonggo.pro.mappers.LoginMapper">
+	
+	<!-- 로그인 -->
+	<select id="login" resultType="com.joonggo.pro.login.dto.UserDTO">
+		SELECT *
+		FROM   JOINUSER
+		WHERE id = #{id} AND  password = #{password}
+	</select>
+
+	
+	<!-- id찾기  -->
+	<select id="F_id" resultType="com.joonggo.pro.login.dto.UserDTO">
+	 	SELECT Name, Email
+	 	FROM LOGIN
+	 	WHERE Name = #{name} AND = Email = #{email}
+	</select>
+	
+	<!-- pw찾기  -->
+	<select id="F_pw" resultType="com.joonggo.pro.login.dto.UserDTO">
+	 	SELECT COUNT(*)
+	 	FROM LOGIN
+	 	WHERE Id = #{id} AND = Email = #{email}
+	</select>
+</mapper>
+
+

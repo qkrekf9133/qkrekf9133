@@ -59,7 +59,7 @@ public class RegproductController {
 		PhotoDTO file	= new PhotoDTO();
 				
 		if(files.isEmpty()) {	// 업로드할 파일이 없는 경우
-		regproductservice.productInsert(regproduct);
+			regproductservice.productInsert(regproduct);
 		} else {	// 업로드할 파일이 있는 경우
 			// Dog.jpg => 파일이름(Dog), 확장자(jpg) 
 			//FilenameUtils : commons-io defendency를 사용.		
@@ -107,7 +107,6 @@ public class RegproductController {
 		logger.info("regproductdtl list ==>" + pno);
 		
 		model.addAttribute("detail", 		regproductservice.productDtl(pno));
-		
 		model.addAttribute("photodetail", 	regproductservice.photoDtl(pno));
 		return "/regproduct/regproductdtl";
 	}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.joonggo.pro.mappers.boardMapper">
+
+<sql id="search">
+	<if test="searchType != null">
+		<if test="searchType == 't'.toString()">AND TITLE LIKE CONCAT('%',#{keyword},'%')</if>
+		<if test="searchType == 'c'.toString()">AND CONTENT LIKE CONCAT('%',#{keyword},'%')</if>
+		<if test="searchType == 'w'.toString()">AND WRITER  LIKE CONCAT('%',#{keyword},'%')</if>
+	</if>
+</sql>
+
+<insert id="insert" parameterType="com.joonggo.pro.board.dto.boardVO">
+	INSERT INTO jboard (title, writer, content, regdate)
+				VALUES (#{title},  #{writer}, #{content}, now())
+</insert>
+
+<!-- <select id="list" parameterType="String" resultType="com.joonggo.pro.board.domain.boardVO">
+	SELECT bno, title, writer, regdate
+		<if test="value != null">
+		FROM ${value}
+		</if>
+</select> -->
+
+<select id="view" parameterType="int" resultType="com.joonggo.pro.board.dto.boardVO">
+	SELECT bno, title, content, writer, regdate
+	FROM   jboard
+	WHERE  bno = #{bno}
+</select>
+
+<update id="update" parameterType="com.joonggo.pro.board.dto.boardVO">
+	UPDATE jboard
+	SET	   title = #{title},
+		   content = #{content}
+   WHERE  bno = #{bno}
+</update>
+
+<!-- 게시글 목록 보기 (Paging 처리) -->
+<select id="boardListPaging" parameterType="com.joonggo.pro.board.dto.SearchCriteria" resultType="com.joonggo.pro.board.dto.boardVO">
+   <![CDATA[
+       SELECT	*
+       FROM	jboard
+       WHERE 1 = 1
+       ]]>
+       <include refid="search"/>
+       ORDER BY bno DESC
+       LIMIT	#{pageStart}, #{perPageNum}
+  
+</select>
+
+<!-- 전체 게시글 수 구하기 (Paging 처리) -->
+<select id="boardListTotalCount" parameterType="com.joonggo.pro.board.dto.SearchCriteria" resultType="Integer">
+		SELECT	count(*)
+		FROM	jboard
+		 WHERE 1 = 1
+       <include refid="search"/>
+   
+</select>
+
+
+<!-- bno에 해당하는 자료를 삭제한다. -->
+<delete id="delete" parameterType="Integer">
+	DELETE
+	FROM	jboard
+	WHERE	BNO		= #{bno}
+</delete>
+
+<!-- 게시글 번호에 해당하는 자료를 추출한다. -->
+<select id="boardDetail" parameterType="int" resultType="com.joonggo.pro.board.dto.boardVO">
+SELECT	*
+FROM	jboard
+WHERE	BNO		= #{bno}
+</select>
+
+
+</mapper>

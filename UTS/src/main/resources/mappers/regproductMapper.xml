@@ -8,8 +8,8 @@
 <!-- 게시글 넣기 -->
 <insert id="productInsert" parameterType="com.joonggo.pro.regproduct.dto.RegproductDTO" useGeneratedKeys="true" keyProperty="pno">
 	INSERT	INTO	product
-			( psubject, 		pprice, 	plocation, 		pcontent, 		pwriter,	 pcondition,	 pquantity, pregdate,  pexchange, ptype)
-	VALUES	( #{psubject},	#{pprice},	#{plocation},	#{pcontent}, 	#{pwriter},	 #{pcondition}, #{pquantity},	now(),	#{pexchange}, #{ptype} )
+			( psubject,     pprice,      ppriceinfo,   plocation, 		pcontent, 		pwriter,	 pcondition,	 pquantity, pregdate,  pexchange, ptype)
+	VALUES	( #{psubject},	#{pprice},	#{ppriceinfo}, #{plocation},	#{pcontent}, 	#{pwriter},	 #{pcondition}, #{pquantity},	now(),	#{pexchange}, #{ptype} )
 </insert>
 
 <insert id="photoInsert" parameterType="com.joonggo.pro.regproduct.dto.PhotoDTO" useGeneratedKeys="true" keyProperty="photono">

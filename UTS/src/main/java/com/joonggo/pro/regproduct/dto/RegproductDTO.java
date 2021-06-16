@@ -12,6 +12,7 @@ public class RegproductDTO {
 	private int 		pno;
 	private String 		psubject;
 	private Long 		pprice;
+	private String 		ppriceinfo;
 	private String 		plocation;
 	private String 		pcontent;
 	private String 		pwriter;
