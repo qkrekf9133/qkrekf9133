@@ -257,6 +257,7 @@
 	}
 
   $('#Agree_all').click(function(){
+	  		
 		var checked = $('#Agree_all').is(':checked');
 		//$('#Agree_all').prop('checked',!checked);
 		var checked1 = $('#Agree_01').is(':checked');
@@ -272,6 +273,7 @@
 		} else {
 			$('input:checkbox').prop('checked',false);
 			  alert("약관에 모두 동의하셔야 회원가입을 하실 수 있습니다.");
+			  
 		}
 	});
   

@@ -197,7 +197,7 @@ public class UserController {
 		return "/Logon/Login";
 	}
 	
-	
+}	
 	/*
 	//-------------------------------------------------------------------------------------------------
 	// 회원가입 get
@@ -242,6 +242,5 @@ public class UserController {
 		return result;
 	}
 	 */
-}
 
 

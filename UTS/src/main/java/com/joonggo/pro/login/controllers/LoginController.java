@@ -7,8 +7,11 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.joonggo.pro.login.dto.LoginDTO;
@@ -35,28 +38,36 @@ public class LoginController {
 	//-------------------------------------------------------------------------------------------------
 	//로그인 화면으로 이동
 	//-------------------------------------------------------------------------------------------------
-	/*
-	 * @RequestMapping("Login.do") public String login() throws Exception { return
-	 * "Logon/Login"; // WEB-INF/views/member/login.jsp로 이동 }
-	 */
+	
+	@RequestMapping("Login.do")
+	public String login() throws Exception {
+		return "Logon/Login";	// WEB-INF/views/member/login.jsp로 이동
+	}
 	
 	//-------------------------------------------------------------------------------------------------
 	//로그인 입력 값 검사
 	//-------------------------------------------------------------------------------------------------
-	/*
-	 * @RequestMapping("login_check.do") public ModelAndView
-	 * login_check(@ModelAttribute LoginDTO loginDTO, HttpSession session) throws
-	 * Exception { logger.info("LoginController 진입.....");
-	 * 
-	 * //로그인 검사 성공 => 이름이 넘어온다, 실패일 경우 => null이 넘어온다. String name =
-	 * loginService.loginCheck(loginDTO, session);
-	 * 
-	 * //넘겨줄 값을 저장하고 넘어갈 뷰페이지를 동시에 사용. ModelAndView mav = new ModelAndView();
-	 * if(name != null) { // 로그인 검사가 정상이면 시작 페이지로 이동한다. mav.setViewName("/"); //main
-	 * => 뷰의 이름 //뷰에 전달할 값 mav.addObject("message", name); } else { //로그인 검사를 실패하였으면
-	 * login 페이지로 다시 되돌아가게 한다. mav.setViewName("Logon/Login"); //뷰에 전달할 값
-	 * mav.addObject("message", "error"); } return mav; }
-	 */
+	@RequestMapping("login_check.do")
+	public ModelAndView login_check(@ModelAttribute UserDTO userDTO, HttpSession session) throws Exception {
+		logger.info("LoginController 진입.....");
+		
+		//로그인 검사 성공 => 이름이 넘어온다, 실패일 경우 => null이 넘어온다.
+		String name = loginService.loginCheck(userDTO, session);
+		
+		//넘겨줄 값을 저장하고 넘어갈 뷰페이지를 동시에 사용.
+		ModelAndView mav = new ModelAndView();
+		if(name != null) {	// 로그인 검사가 정상이면 시작 페이지로 이동한다.
+			mav.setViewName("/"); //main => 뷰의 이름
+			//뷰에 전달할 값
+			mav.addObject("message", name);
+		} else { //로그인 검사를 실패하였으면 login 페이지로 다시 되돌아가게 한다.
+			mav.setViewName("Logon/Login");
+			//뷰에 전달할 값
+			mav.addObject("message", "error");
+		}
+		return mav;
+	}
+	
 	/*
 	//-------------------------------------------------------------------------------------------------
 	//로그아웃
@@ -97,7 +108,7 @@ public class LoginController {
 	public String login(UserDTO userDTO, HttpServletRequest req, RedirectAttributes rttr) throws Exception {
 		
 		log.info("LoginController login POST....");
-		log.info("LoginController login POST loginDTO ==> " + userDTO);
+		log.info("LoginController login POST userDTO ==> " + userDTO);
 		
 		HttpSession session = req.getSession();
 		//넘겨받은 회원정보를 가지고 Service에게 의뢰한다.
@@ -118,21 +129,80 @@ public class LoginController {
 		return "redirect:/Logon/Login";
 	}
 	
+
 	//-------------------------------------------------------------------------------------------------
-	// 아이디 찾기 이동
+	// 아이디 찾기 메세지 get
 	//-------------------------------------------------------------------------------------------------
-	
-	@RequestMapping("FindId")
-	public String FindId() throws Exception {
-		return "/Logon/FindId";
+	@RequestMapping(value = "/FindIdComplete", method = RequestMethod.GET)
+	public String FindIdComplete() throws Exception {
+		logger.info("get FindIdComplete");
+		return "/Logon/FindIdComplete";
 	}
 	
 	//-------------------------------------------------------------------------------------------------
+	// 아이디 찾기 get
+	//-------------------------------------------------------------------------------------------------
+	
+	@RequestMapping(value="/FindId", method = RequestMethod.GET)
+	public String findId() throws Exception {
+		return "/Logon/FindId";
+	}
+	
+	
+	//-------------------------------------------------------------------------------------------------
+	// 비밀번호 찾기 메세지 get
+	//-------------------------------------------------------------------------------------------------
+	
+	@RequestMapping(value="/FindPwComplete", method = RequestMethod.GET)
+	public String FindPwComplete() throws Exception {
+		log.info("get FindPwComplete()");
+		return "/Logon/FindPwComplete";
+	}
+	
+	//-------------------------------------------------------------------------------------------------
+	// 아이디 찾기 POST
+	//-------------------------------------------------------------------------------------------------
+	@RequestMapping(value="/FindId", method = RequestMethod.POST)
+	public String findId(UserDTO userDTO, Model model) throws Exception {
+		UserDTO member = loginService.findId(userDTO);
+		
+		log.info("member =====> " + member);
+
+		if(member == null) {
+			model.addAttribute("check",1);
+			return "/Logon/Login";
+		} else {
+			model.addAttribute("check",0);
+			model.addAttribute("id", member.getId());
+			return "/Logon/FindIdComplete";
+		}
+		
+	}
+	//-------------------------------------------------------------------------------------------------
 	// PW 찾기 이동
 	//-------------------------------------------------------------------------------------------------	
-	@RequestMapping("FindPw")
-	public String FindPw() throws Exception {
+	@RequestMapping(value="/FindPw", method= RequestMethod.GET)
+	public String findPw() throws Exception {
+		log.info("findPw 탔어.....");
 		return "/Logon/FindPw";
+	}
+	
+	
+	//-------------------------------------------------------------------------------------------------
+	// 비밀번호 찾기 POST
+	//-------------------------------------------------------------------------------------------------
+	@RequestMapping(value="/FindPw", method = RequestMethod.POST)
+	public String findPw(UserDTO userDTO, Model model) throws Exception {
+		UserDTO member = loginService.findPw(userDTO);
+		
+		if(member == null) {
+			model.addAttribute("check",1);
+			return "/Logon/FindPwComplete";
+		} else {
+			model.addAttribute("check",0);
+			model.addAttribute("password", member.getPassword());
+		}		
+			return "/Logon/FindPwComplete";
 	}
 	
 }

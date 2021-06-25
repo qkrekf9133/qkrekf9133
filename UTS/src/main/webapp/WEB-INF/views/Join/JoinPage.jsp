@@ -109,7 +109,7 @@
  
 				<div class="form-group">
 					<div class = "col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-success btn-lg" id="submit">회원가입</button>		
+						<button type="submit" class="btn btn-success btn-lg" id="submit" disabled="disabled">회원가입</button>		
 						<button type="reset" class="cancle btn btn-danger btn-lg" onClick="location.href='/'">취소 </button>
 					</div>		
 				</div>	
@@ -257,11 +257,11 @@ $(document).ready(function(){
 			$("#phoneNumber").focus();
 			return false;
 		}
-
+	
 	})
 })
 
-	
+
 //우편번호
 function daumZipCode() {
 	new daum.Postcode({
@@ -320,12 +320,15 @@ function fn_idCheck() {
 			//alert("Return Value : " + data);
 			if(data == 1) {
 				alert("중복된 아이디 입니다. 다시 입력하여 주세요.");
+				// 아이디 중복시 버튼 비활성화
+				$("#submit").attr("disabled", "disabled");
 			} else if(data == 0) {
 				//$("#idCheck").attr("value", "Y");
 				alert("사용가능한 아이디입니다.");
+				$("#submit").removeAttr("disabled");
 			}
 		}
-	});
+	})
 }
 
 //닉네임 중복확인
@@ -341,9 +344,11 @@ function fn_nCheck(){
 			//alert("Return Value : " + data);
 			if(data == 1) {
 				alert("중복된 닉네임 입니다.");
+				$("#submit").attr("disabled", "disabled");
 			} else if(data == 0) {
 				//$("#nicknameCheck").attr("value", "Y");
 				alert("사용가능한 닉네임 입니다.");
+				$("#submit").removeAttr("disabled");
 			}
 		}
 	});

@@ -60,9 +60,7 @@
 		
 	</div>
 </div>
-
-		
-			<div class="main-item-box" style="padding-top:20px">
+		<div class="main-item-box" style="padding-top:20px">
 			<div class="main-prd-list">
 				<c:forEach var="productList" items="${productList}">
 					<div class="main-prd-box">
@@ -78,11 +76,6 @@
 				</c:forEach>
 			</div>
 		</div>	
-			
-		
-			
-				
-					
 	</div>
 		
 	

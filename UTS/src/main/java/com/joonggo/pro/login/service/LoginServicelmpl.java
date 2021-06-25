@@ -28,7 +28,7 @@ public class LoginServicelmpl implements LoginService {
 	//-------------------------------------------------------------------------------------------------
 	@Override
 	public UserDTO login(UserDTO userDTO) throws Exception {
-		log.info("LoginService login.....");
+		log.info("LoginServicelmpl login.....");
 		return loginDAO.login(userDTO);
 	}
 
@@ -37,7 +37,7 @@ public class LoginServicelmpl implements LoginService {
 	//-------------------------------------------------------------------------------------------------
 	@Override
 	public String loginCheck(UserDTO userDTO, HttpSession session) throws Exception {
-		log.info("LoginService 진입.....");
+		log.info("LoginServicelmpl 진입.....");
 		// 데이터가 존재하면 : 이름이 넘어온다.
 		// 데이터가 존재하지 않으면 : null이 넘어온다.
 		//String name = memberDAO.loginCheck(memberDTO);
@@ -66,7 +66,7 @@ public class LoginServicelmpl implements LoginService {
 	//-------------------------------------------------------------------------------------------------
 	@Override
 	public UserDTO findId(UserDTO userDTO) throws Exception {
-		log.info("LoginService findId.....");
+		log.info("LoginServicelmpl findId.....");
 		return loginDAO.findId(userDTO);
 	}
 	
@@ -76,7 +76,7 @@ public class LoginServicelmpl implements LoginService {
 	//-------------------------------------------------------------------------------------------------
 	@Override
 	public UserDTO findPw(UserDTO userDTO) throws Exception {
-		log.info("LoginService findPw.....");
+		log.info("LoginServicelmpl findPw.....");
 		return loginDAO.findPw(userDTO);
 	}
 

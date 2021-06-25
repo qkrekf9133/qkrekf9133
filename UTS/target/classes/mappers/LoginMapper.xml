@@ -15,17 +15,17 @@
 
 	
 	<!-- id찾기  -->
-	<select id="F_id" resultType="com.joonggo.pro.login.dto.UserDTO">
-	 	SELECT Name, Email
-	 	FROM LOGIN
-	 	WHERE Name = #{name} AND = Email = #{email}
+	<select id="findId" resultType="com.joonggo.pro.login.dto.UserDTO">
+	 	SELECT name, email
+	 	FROM JOINUSER
+	 	WHERE name = #{name} AND  Email = #{email}
 	</select>
 	
 	<!-- pw찾기  -->
-	<select id="F_pw" resultType="com.joonggo.pro.login.dto.UserDTO">
-	 	SELECT COUNT(*)
-	 	FROM LOGIN
-	 	WHERE Id = #{id} AND = Email = #{email}
+	<select id="findPw" resultType="com.joonggo.pro.login.dto.UserDTO">
+	 	SELECT password
+	 	FROM JOINUSER
+	 	WHERE id = #{id} AND  email = #{email}
 	</select>
 </mapper>
 

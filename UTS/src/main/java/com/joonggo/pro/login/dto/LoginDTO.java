@@ -3,7 +3,7 @@ package com.joonggo.pro.login.dto;
 import lombok.Data;
 
 //데이터 Model
-
+@Data
 public class LoginDTO {
 	private String name;
 	private String id;
@@ -47,6 +47,10 @@ public class LoginDTO {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public LoginDTO() {
+		// TODO Auto-generated constructor stub
 	}
 	
 	@Override

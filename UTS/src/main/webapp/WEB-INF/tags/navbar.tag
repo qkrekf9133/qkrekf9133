@@ -40,7 +40,7 @@
 						<a class="dropdown-toggle" > 게시글</a>
 						<ul class="dropdown-menu">
 							<li><a href="/board/list2">게시글 목록 2</a></li>
-							<li><a href="/hello/hello1">커뮤니티</a></li>
+							<li><a href="/board/list">커뮤니티</a></li>
 						</ul>
 					</li>
 			

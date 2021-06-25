@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.joonggo.pro.login.dto.LoginDTO;
 import com.joonggo.pro.login.dto.UserDTO;
 
 import lombok.extern.java.Log;
@@ -52,8 +53,15 @@ public class LoginDAOImpl implements LoginDAO {
 	//-------------------------------------------------------------------------------------------------
 	@Override
 	public UserDTO findId(UserDTO userDTO) throws Exception {
-		log.info("LoginDAOImpl findId() ==>");
+		log.info("LoginDAOImpl findId() userDTO ==>" + userDTO);
 		return sqlSession.selectOne(namespace + ".findId", userDTO);
+		
+		/*
+		LoginDTO lDTO = sqlSession.selectOne(namespace + ".findId", userDTO);
+		log.info("LoginDAOImpl Return userDTO ==>" + lDTO);
+		
+		return lDTO;
+		*/
 	}
 	
 

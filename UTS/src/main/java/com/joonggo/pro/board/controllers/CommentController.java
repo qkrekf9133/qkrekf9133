@@ -34,15 +34,16 @@ public class CommentController {
 	//-------------------------------------------------------------------------------------------------
 	@RequestMapping("/insert")
 	@ResponseBody
-	private int mCommentServiceInsert(@RequestParam int bno, @RequestParam String content) throws Exception {
+	private int mCommentServiceInsert(@RequestParam int bno, @RequestParam String content, @RequestParam String writer) throws Exception {
 		System.out.println("commentServiceServiceInsert.....");
 		System.out.println("bno["+bno+"]");
 		System.out.println("content["+content+"]");
 		
+		 
 		CommentDTO comment = new CommentDTO();
 		comment.setBno(bno);
 		comment.setContent(content);
-		comment.setWriter("user");
+		comment.setWriter(writer);
 		
 		int rtnVal = commentService.commentInsert(comment);
 		log.info("CommentController 리턴() => " + rtnVal);

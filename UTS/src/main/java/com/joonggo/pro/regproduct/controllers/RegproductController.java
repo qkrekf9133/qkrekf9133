@@ -69,7 +69,7 @@ public class RegproductController {
 			String	destinationFileName;
 			// fileUrl = "uploadFiles 폴더의 위치";
 			// uploadFiles 폴더의 위치 확인 : uploadFiles 우클릭 -> Properties -> Resource - > Location
-			String	fileUrl = "C:/Users/MOON/git/repository/UTS/src/main/webapp/resources/uploadimg/"; 
+			String	fileUrl = "/src/main/webapp/resources/uploadimg/"; 
 			// String	fileUrl = "C:/images/uploadFiles/"; 
 			
 			do {

@@ -93,6 +93,7 @@
 			<div class="input-group">
 				<input type="hidden" name="bno" value="${view.bno}"/>
 				<input type="text" class="form-control" id="content" name="content" placeholder="댓글을 입력하십시오"/>
+				<input type="text" name="writer" value="${member.nickname}" readonly/>
 				<span class="input-group-btn">
 					<button class="btn btn-warning" id="btn-comment" type="button" name="commentInsertBtn">등록</button>
 				</span>
