@@ -2,18 +2,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"   		uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" 		uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<%@ taglib prefix="layoutTag" 	tagdir="/WEB-INF/tags" %>
+<layoutTag:layout>
 <head>
 	<title>Thymeleaf3</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	
-<%@ include file="../include/layout.jsp" %>
 
 </head>
 <body>
 
 <div class="container">
-	<%@ include file="../include/topmenu.jsp" %>
+
 
 		
 	<form class="form-horizontal" name = "regproductForm" action="/regproduct/regproductinsert"  method="post" enctype="multipart/form-data" >
@@ -499,7 +499,7 @@
 	</div> <!-- <div class="container"> end  -->
 		
 	
-	<%@ include file="../include/footer.jsp" %>
+
 	<script  src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <script>
@@ -649,3 +649,5 @@ function setThumbnail(event) {
 </script>
 </body>
 </html>
+
+</layoutTag:layout>

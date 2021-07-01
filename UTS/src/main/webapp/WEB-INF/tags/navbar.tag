@@ -1,10 +1,13 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<link rel="stylesheet" type="text/css" href="../../resources/css/index.css" />
+<%@ taglib prefix="c"   		uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" 		uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+
+
 <nav class="navbar navbar-fixed-top navbar-light bg-light mainnavbar">
 	
-		<div class="navbar-header ">
+		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -37,11 +40,11 @@
 					
 					
 					<li class="dropdown" >
-						<a class="dropdown-toggle" > 게시글</a>
+						<a class="dropdown-toggle" >게시글</a>
 						<ul class="dropdown-menu">
 							<li><a href="/board/list2">게시글 목록 2</a></li>
 							<li><a href="/board/list">커뮤니티</a></li>
-						</ul>
+						</ul>				
 					</li>
 			
 			
@@ -58,7 +61,7 @@
 		            </span>
 		            </div>
 		      	 </form>
-		  <c:if test="${member == null}"> 
+		   <c:if test="${member == null}"> 
 			<div class="top-btn navbar-right ">
 				 <a class="btn btn-success  btn-sm" href="/Logon/Login">로그인</a>
 				 <a class="btn btn-primary  btn-sm" href="/Join/Joinarticle">회원가입</a>
@@ -70,25 +73,10 @@
 				 <a class="btn btn-primary  btn-sm" href="#">회원정보</a>
 			</div>
 			</c:if>
+			
 			</div>
 			
 		</div>
 	
 </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

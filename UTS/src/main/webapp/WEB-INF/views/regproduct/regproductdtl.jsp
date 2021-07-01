@@ -3,10 +3,13 @@
 <%@ taglib prefix="fmt" 		uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page session="true" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<%@ taglib prefix="layoutTag" 	tagdir="/WEB-INF/tags" %>
+<layoutTag:layout>
 <head>
 	<title>Thymeleaf3</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<%@ include file="../include/layout.jsp" %>
+	
 <style>
 
 .ptype{
@@ -92,7 +95,7 @@
 
 <div class="container">
 	
-	<%@ include file="../include/topmenu.jsp" %>
+
 	
 	
 	<div class="col-sm-12 ptype" style="padding-top: 100px">
@@ -224,7 +227,6 @@
 	</div> <!-- <div class="container"> end  -->
 		
 	
-	<%@ include file="../include/footer.jsp" %>
 	
 	<script>
 	
@@ -252,3 +254,4 @@
 
 </body>
 </html>
+</layoutTag:layout>

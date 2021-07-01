@@ -1,6 +1,8 @@
 <%@ tag language="java" pageEncoding="UTF-8" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+
+
 <!-- jQuery -->
 <script src="//code.jquery.com/jquery.min.js"></script>
 

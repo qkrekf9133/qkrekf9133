@@ -1,20 +1,22 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="true" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"   		uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" 		uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page session="true" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="layoutTag" 	tagdir="/WEB-INF/tags" %>
+<layoutTag:layout>
+<!DOCTYPE html>
+<html>
 <head>
 	<title>Thymeleaf3</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<%@ include file="include/layout.jsp" %>
+
 
 </head>
 <body>
 
 <div class="container">
 	
-	<%@ include file="include/topmenu.jsp" %>
-	<div class="intro">
+		<div class="intro">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -45,7 +47,7 @@
 				<img class="img-responsive center-block" src="/../../resources/images/intro3.jpg"/>
 				<!-- carousel에 설명을 달아준다. -->
 				<div class="carousel-caption">
-					
+				
 				</div>
 			</div>
 		</div>
@@ -79,6 +81,10 @@
 	</div>
 		
 	
-	<%@ include file="include/footer.jsp" %>
+
 </body>
 </html>
+
+
+</layoutTag:layout>
+
